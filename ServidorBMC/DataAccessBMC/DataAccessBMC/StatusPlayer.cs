@@ -17,15 +17,12 @@ namespace DataAccessBMC
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public StatusPlayer()
         {
-            this.GuestPlayers = new HashSet<GuestPlayers>();
             this.Profile = new HashSet<Profile>();
         }
     
         public int StatusID { get; set; }
         public string StatusName { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<GuestPlayers> GuestPlayers { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Profile> Profile { get; set; }
     }

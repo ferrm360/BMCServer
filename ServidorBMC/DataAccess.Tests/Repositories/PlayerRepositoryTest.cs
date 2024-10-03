@@ -14,16 +14,11 @@ namespace DataAccess.Tests.Repositories
 {
     public class PlayerRepositoryTest
     {
-
-        private readonly BMCContext _context;
-        private DbContextTransaction _transaction;
-
-        
+        private readonly BMCDBEntities _context;
+   
         public PlayerRepositoryTest()
         {
-            _context = new BMCContext();
-
-            _transaction = _context.Database.BeginTransaction();
+            _context = new BMCDBEntities();
         }
 
         
@@ -32,31 +27,28 @@ namespace DataAccess.Tests.Repositories
         {
             ResetIdentity("Player");
             _context.Dispose();
-            _transaction.Rollback();
-            _transaction.Dispose();
-            _context.Dispose();
         }
        
         [Fact]
         public void InsertPlayerSuccess()
         {
             var repository = new PlayerRepository(_context);
-            var player = new Player { Username = "FerRMZ", Email = "ferram200011@gmail.com", PasswordHash = "neco2000"};
+            var player = new Player { Username = "FerRMZ", Email = "ferram2@gmail.com", PasswordHash = "ferr2000"};
 
             
-            repository.InsertPlayer(player);
+            repository.Add(player);
             repository.Save();
 
             var insertedPlayer = _context.Player.SingleOrDefault(p => p.Username == "FerRMZ");
-            Assert.NotNull(insertedPlayer);
             Assert.Equal("FerRMZ", insertedPlayer.Username);
         }
 
         private void ResetIdentity(string tableName)
         {
-            string resetCommand = $"DBCC CHECKIDENT ('{tableName}', RESEED, 0);";
+            string resetCommand = $"DBCC CHECKIDENT ('Player', RESEED, 0);";
 
             _context.Database.ExecuteSqlCommand(resetCommand);
+            _context.Database.ExecuteSqlCommand("DELETE FROM Player");     
         }
     }
 

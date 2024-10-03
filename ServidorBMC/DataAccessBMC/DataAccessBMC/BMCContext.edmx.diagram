@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="db9955c2b0204ad3b289e48941417480" Name="Diagram1">
+        <EntityTypeShape EntityType="BMCDBContext.ChatMessages" Width="1.5" PointX="3" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BMCDBContext.FriendRequest" Width="1.5" PointX="3" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BMCDBContext.PasswordResetRequests" Width="1.5" PointX="3" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BMCDBContext.Player" Width="1.5" PointX="0.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BMCDBContext.Profile" Width="1.5" PointX="6" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BMCDBContext.StatusPlayer" Width="1.5" PointX="3.75" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BMCDBContext.UserScores" Width="1.5" PointX="3" PointY="16.625" IsExpanded="true" />
+        <AssociationConnector Association="BMCDBContext.FK__ChatMessa__Recei__4AB81AF0" ManuallyRouted="false" />
+        <AssociationConnector Association="BMCDBContext.FK__ChatMessa__Sende__49C3F6B7" ManuallyRouted="false" />
+        <AssociationConnector Association="BMCDBContext.FK__FriendReq__Recei__45F365D3" ManuallyRouted="false" />
+        <AssociationConnector Association="BMCDBContext.FK__FriendReq__Sende__44FF419A" ManuallyRouted="false" />
+        <AssociationConnector Association="BMCDBContext.FK__PasswordR__Playe__4E88ABD4" ManuallyRouted="false" />
+        <AssociationConnector Association="BMCDBContext.FK__Profile__PlayerI__5441852A" ManuallyRouted="false" />
+        <AssociationConnector Association="BMCDBContext.FK__UserScore__Playe__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="BMCDBContext.FK__Profile__StatusI__5535A963" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

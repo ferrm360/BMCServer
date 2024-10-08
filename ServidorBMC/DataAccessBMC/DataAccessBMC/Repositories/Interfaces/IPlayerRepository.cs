@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataAccessBMC.Repositories.Implementations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,14 +7,10 @@ using System.Threading.Tasks;
 
 namespace DataAccessBMC.Repositories.Interfaces
 {
-    public interface IPlayerRepository
+    public interface IPlayerRepository : IGenericRepository<Player>
     {
-        IEnumerable<Player> GetAllPlayers();
-        Player GetPlayerById(int id);
-        void InsertPlayer(Player player);
-        void UpdatePlayer(Player player);
-        void DeletePlayer(int id);
-        Player FindByUsername (string username);
-        void Save();
+        Player GetByUsername (string username);
+        Player GetByEmail(string email);
+        void UpdatePasswordHash(int player, string passwordHash);
     }
 }

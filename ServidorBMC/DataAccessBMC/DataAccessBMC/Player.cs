@@ -21,8 +21,6 @@ namespace DataAccessBMC
             this.ChatMessages1 = new HashSet<ChatMessages>();
             this.FriendRequest = new HashSet<FriendRequest>();
             this.FriendRequest1 = new HashSet<FriendRequest>();
-            this.GameLobby = new HashSet<GameLobby>();
-            this.LobbyPlayers = new HashSet<LobbyPlayers>();
             this.PasswordResetRequests = new HashSet<PasswordResetRequests>();
             this.Profile = new HashSet<Profile>();
             this.UserScores = new HashSet<UserScores>();
@@ -41,10 +39,6 @@ namespace DataAccessBMC
         public virtual ICollection<FriendRequest> FriendRequest { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<FriendRequest> FriendRequest1 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<GameLobby> GameLobby { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<LobbyPlayers> LobbyPlayers { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PasswordResetRequests> PasswordResetRequests { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

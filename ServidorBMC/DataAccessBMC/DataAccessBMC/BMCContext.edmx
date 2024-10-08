@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="BMCModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="BMCDBContext.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ChatMessages">
           <Key>
             <PropertyRef Name="MessageID" />
@@ -23,35 +23,6 @@
           <Property Name="SenderPlayerID" Type="int" Nullable="false" />
           <Property Name="ReceiverPlayerID" Type="int" Nullable="false" />
           <Property Name="RequestStatus" Type="varchar" MaxLength="50" />
-        </EntityType>
-        <EntityType Name="GameLobby">
-          <Key>
-            <PropertyRef Name="LobbyID" />
-          </Key>
-          <Property Name="LobbyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="LobbyName" Type="varchar" MaxLength="256" Nullable="false" />
-          <Property Name="Password" Type="varchar" MaxLength="256" />
-          <Property Name="HostID" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="GuestPlayers">
-          <Key>
-            <PropertyRef Name="GuestID" />
-          </Key>
-          <Property Name="GuestID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Username" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="JoinDate" Type="datetime" />
-          <Property Name="StatusID" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="LobbyPlayers">
-          <Key>
-            <PropertyRef Name="LobbyID" />
-            <PropertyRef Name="PlayerID" />
-            <PropertyRef Name="GuestID" />
-          </Key>
-          <Property Name="LobbyID" Type="int" Nullable="false" />
-          <Property Name="PlayerID" Type="int" Nullable="false" />
-          <Property Name="GuestID" Type="int" Nullable="false" />
-          <Property Name="PlayerStatus" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="PasswordResetRequests">
           <Key>
@@ -151,68 +122,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__GameLobby__HostI__5812160E">
-          <End Role="Player" Type="Self.Player" Multiplicity="1" />
-          <End Role="GameLobby" Type="Self.GameLobby" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Player">
-              <PropertyRef Name="PlayerID" />
-            </Principal>
-            <Dependent Role="GameLobby">
-              <PropertyRef Name="HostID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__GuestPlay__Statu__3E52440B">
-          <End Role="StatusPlayer" Type="Self.StatusPlayer" Multiplicity="1" />
-          <End Role="GuestPlayers" Type="Self.GuestPlayers" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="StatusPlayer">
-              <PropertyRef Name="StatusID" />
-            </Principal>
-            <Dependent Role="GuestPlayers">
-              <PropertyRef Name="StatusID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__LobbyPlay__Guest__5CD6CB2B">
-          <End Role="GuestPlayers" Type="Self.GuestPlayers" Multiplicity="1" />
-          <End Role="LobbyPlayers" Type="Self.LobbyPlayers" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="GuestPlayers">
-              <PropertyRef Name="GuestID" />
-            </Principal>
-            <Dependent Role="LobbyPlayers">
-              <PropertyRef Name="GuestID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__LobbyPlay__Lobby__5AEE82B9">
-          <End Role="GameLobby" Type="Self.GameLobby" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="LobbyPlayers" Type="Self.LobbyPlayers" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="GameLobby">
-              <PropertyRef Name="LobbyID" />
-            </Principal>
-            <Dependent Role="LobbyPlayers">
-              <PropertyRef Name="LobbyID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__LobbyPlay__Playe__5BE2A6F2">
-          <End Role="Player" Type="Self.Player" Multiplicity="1" />
-          <End Role="LobbyPlayers" Type="Self.LobbyPlayers" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Player">
-              <PropertyRef Name="PlayerID" />
-            </Principal>
-            <Dependent Role="LobbyPlayers">
-              <PropertyRef Name="PlayerID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__PasswordR__Playe__4E88ABD4">
           <End Role="Player" Type="Self.Player" Multiplicity="1" />
           <End Role="PasswordResetRequests" Type="Self.PasswordResetRequests" Multiplicity="*" />
@@ -261,12 +170,9 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="BMCModelStoreContainer">
+        <EntityContainer Name="BMCDBContextStoreContainer">
           <EntitySet Name="ChatMessages" EntityType="Self.ChatMessages" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FriendRequest" EntityType="Self.FriendRequest" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="GameLobby" EntityType="Self.GameLobby" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="GuestPlayers" EntityType="Self.GuestPlayers" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="LobbyPlayers" EntityType="Self.LobbyPlayers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PasswordResetRequests" EntityType="Self.PasswordResetRequests" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Player" EntityType="Self.Player" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Profile" EntityType="Self.Profile" Schema="dbo" store:Type="Tables" />
@@ -287,26 +193,6 @@
           <AssociationSet Name="FK__FriendReq__Sende__44FF419A" Association="Self.FK__FriendReq__Sende__44FF419A">
             <End Role="Player" EntitySet="Player" />
             <End Role="FriendRequest" EntitySet="FriendRequest" />
-          </AssociationSet>
-          <AssociationSet Name="FK__GameLobby__HostI__5812160E" Association="Self.FK__GameLobby__HostI__5812160E">
-            <End Role="Player" EntitySet="Player" />
-            <End Role="GameLobby" EntitySet="GameLobby" />
-          </AssociationSet>
-          <AssociationSet Name="FK__GuestPlay__Statu__3E52440B" Association="Self.FK__GuestPlay__Statu__3E52440B">
-            <End Role="StatusPlayer" EntitySet="StatusPlayer" />
-            <End Role="GuestPlayers" EntitySet="GuestPlayers" />
-          </AssociationSet>
-          <AssociationSet Name="FK__LobbyPlay__Guest__5CD6CB2B" Association="Self.FK__LobbyPlay__Guest__5CD6CB2B">
-            <End Role="GuestPlayers" EntitySet="GuestPlayers" />
-            <End Role="LobbyPlayers" EntitySet="LobbyPlayers" />
-          </AssociationSet>
-          <AssociationSet Name="FK__LobbyPlay__Lobby__5AEE82B9" Association="Self.FK__LobbyPlay__Lobby__5AEE82B9">
-            <End Role="GameLobby" EntitySet="GameLobby" />
-            <End Role="LobbyPlayers" EntitySet="LobbyPlayers" />
-          </AssociationSet>
-          <AssociationSet Name="FK__LobbyPlay__Playe__5BE2A6F2" Association="Self.FK__LobbyPlay__Playe__5BE2A6F2">
-            <End Role="Player" EntitySet="Player" />
-            <End Role="LobbyPlayers" EntitySet="LobbyPlayers" />
           </AssociationSet>
           <AssociationSet Name="FK__PasswordR__Playe__4E88ABD4" Association="Self.FK__PasswordR__Playe__4E88ABD4">
             <End Role="Player" EntitySet="Player" />
@@ -329,7 +215,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="BMCModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="BMCDBContext" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="ChatMessages">
           <Key>
             <PropertyRef Name="MessageID" />
@@ -352,42 +238,6 @@
           <Property Name="RequestStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Player" Relationship="Self.FK__FriendReq__Recei__45F365D3" FromRole="FriendRequest" ToRole="Player" />
           <NavigationProperty Name="Player1" Relationship="Self.FK__FriendReq__Sende__44FF419A" FromRole="FriendRequest" ToRole="Player" />
-        </EntityType>
-        <EntityType Name="GameLobby">
-          <Key>
-            <PropertyRef Name="LobbyID" />
-          </Key>
-          <Property Name="LobbyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="LobbyName" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Password" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
-          <Property Name="HostID" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Player" Relationship="Self.FK__GameLobby__HostI__5812160E" FromRole="GameLobby" ToRole="Player" />
-          <NavigationProperty Name="LobbyPlayers" Relationship="Self.FK__LobbyPlay__Lobby__5AEE82B9" FromRole="GameLobby" ToRole="LobbyPlayers" />
-        </EntityType>
-        <EntityType Name="GuestPlayers">
-          <Key>
-            <PropertyRef Name="GuestID" />
-          </Key>
-          <Property Name="GuestID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Username" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="JoinDate" Type="DateTime" Precision="3" />
-          <Property Name="StatusID" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="StatusPlayer" Relationship="Self.FK__GuestPlay__Statu__3E52440B" FromRole="GuestPlayers" ToRole="StatusPlayer" />
-          <NavigationProperty Name="LobbyPlayers" Relationship="Self.FK__LobbyPlay__Guest__5CD6CB2B" FromRole="GuestPlayers" ToRole="LobbyPlayers" />
-        </EntityType>
-        <EntityType Name="LobbyPlayers">
-          <Key>
-            <PropertyRef Name="LobbyID" />
-            <PropertyRef Name="PlayerID" />
-            <PropertyRef Name="GuestID" />
-          </Key>
-          <Property Name="LobbyID" Type="Int32" Nullable="false" />
-          <Property Name="PlayerID" Type="Int32" Nullable="false" />
-          <Property Name="GuestID" Type="Int32" Nullable="false" />
-          <Property Name="PlayerStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="GameLobby" Relationship="Self.FK__LobbyPlay__Lobby__5AEE82B9" FromRole="LobbyPlayers" ToRole="GameLobby" />
-          <NavigationProperty Name="GuestPlayers" Relationship="Self.FK__LobbyPlay__Guest__5CD6CB2B" FromRole="LobbyPlayers" ToRole="GuestPlayers" />
-          <NavigationProperty Name="Player" Relationship="Self.FK__LobbyPlay__Playe__5BE2A6F2" FromRole="LobbyPlayers" ToRole="Player" />
         </EntityType>
         <EntityType Name="PasswordResetRequests">
           <Key>
@@ -412,8 +262,6 @@
           <NavigationProperty Name="ChatMessages1" Relationship="Self.FK__ChatMessa__Sende__49C3F6B7" FromRole="Player" ToRole="ChatMessages" />
           <NavigationProperty Name="FriendRequest" Relationship="Self.FK__FriendReq__Recei__45F365D3" FromRole="Player" ToRole="FriendRequest" />
           <NavigationProperty Name="FriendRequest1" Relationship="Self.FK__FriendReq__Sende__44FF419A" FromRole="Player" ToRole="FriendRequest" />
-          <NavigationProperty Name="GameLobby" Relationship="Self.FK__GameLobby__HostI__5812160E" FromRole="Player" ToRole="GameLobby" />
-          <NavigationProperty Name="LobbyPlayers" Relationship="Self.FK__LobbyPlay__Playe__5BE2A6F2" FromRole="Player" ToRole="LobbyPlayers" />
           <NavigationProperty Name="PasswordResetRequests" Relationship="Self.FK__PasswordR__Playe__4E88ABD4" FromRole="Player" ToRole="PasswordResetRequests" />
           <NavigationProperty Name="Profile" Relationship="Self.FK__Profile__PlayerI__5441852A" FromRole="Player" ToRole="Profile" />
           <NavigationProperty Name="UserScores" Relationship="Self.FK__UserScore__Playe__412EB0B6" FromRole="Player" ToRole="UserScores" />
@@ -441,7 +289,6 @@
           </Key>
           <Property Name="StatusID" Type="Int32" Nullable="false" />
           <Property Name="StatusName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="GuestPlayers" Relationship="Self.FK__GuestPlay__Statu__3E52440B" FromRole="StatusPlayer" ToRole="GuestPlayers" />
           <NavigationProperty Name="Profile" Relationship="Self.FK__Profile__StatusI__5535A963" FromRole="StatusPlayer" ToRole="Profile" />
         </EntityType>
         <EntityType Name="UserScores">
@@ -502,68 +349,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__GameLobby__HostI__5812160E">
-          <End Role="Player" Type="Self.Player" Multiplicity="1" />
-          <End Role="GameLobby" Type="Self.GameLobby" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Player">
-              <PropertyRef Name="PlayerID" />
-            </Principal>
-            <Dependent Role="GameLobby">
-              <PropertyRef Name="HostID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__LobbyPlay__Lobby__5AEE82B9">
-          <End Role="GameLobby" Type="Self.GameLobby" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="LobbyPlayers" Type="Self.LobbyPlayers" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="GameLobby">
-              <PropertyRef Name="LobbyID" />
-            </Principal>
-            <Dependent Role="LobbyPlayers">
-              <PropertyRef Name="LobbyID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__GuestPlay__Statu__3E52440B">
-          <End Role="StatusPlayer" Type="Self.StatusPlayer" Multiplicity="1" />
-          <End Role="GuestPlayers" Type="Self.GuestPlayers" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="StatusPlayer">
-              <PropertyRef Name="StatusID" />
-            </Principal>
-            <Dependent Role="GuestPlayers">
-              <PropertyRef Name="StatusID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__LobbyPlay__Guest__5CD6CB2B">
-          <End Role="GuestPlayers" Type="Self.GuestPlayers" Multiplicity="1" />
-          <End Role="LobbyPlayers" Type="Self.LobbyPlayers" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="GuestPlayers">
-              <PropertyRef Name="GuestID" />
-            </Principal>
-            <Dependent Role="LobbyPlayers">
-              <PropertyRef Name="GuestID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__LobbyPlay__Playe__5BE2A6F2">
-          <End Role="Player" Type="Self.Player" Multiplicity="1" />
-          <End Role="LobbyPlayers" Type="Self.LobbyPlayers" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Player">
-              <PropertyRef Name="PlayerID" />
-            </Principal>
-            <Dependent Role="LobbyPlayers">
-              <PropertyRef Name="PlayerID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__PasswordR__Playe__4E88ABD4">
           <End Role="Player" Type="Self.Player" Multiplicity="1" />
           <End Role="PasswordResetRequests" Type="Self.PasswordResetRequests" Multiplicity="*" />
@@ -612,12 +397,9 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="BMCContext" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="BMCDBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="ChatMessages" EntityType="Self.ChatMessages" />
           <EntitySet Name="FriendRequest" EntityType="Self.FriendRequest" />
-          <EntitySet Name="GameLobby" EntityType="Self.GameLobby" />
-          <EntitySet Name="GuestPlayers" EntityType="Self.GuestPlayers" />
-          <EntitySet Name="LobbyPlayers" EntityType="Self.LobbyPlayers" />
           <EntitySet Name="PasswordResetRequests" EntityType="Self.PasswordResetRequests" />
           <EntitySet Name="Player" EntityType="Self.Player" />
           <EntitySet Name="Profile" EntityType="Self.Profile" />
@@ -638,26 +420,6 @@
           <AssociationSet Name="FK__FriendReq__Sende__44FF419A" Association="Self.FK__FriendReq__Sende__44FF419A">
             <End Role="Player" EntitySet="Player" />
             <End Role="FriendRequest" EntitySet="FriendRequest" />
-          </AssociationSet>
-          <AssociationSet Name="FK__GameLobby__HostI__5812160E" Association="Self.FK__GameLobby__HostI__5812160E">
-            <End Role="Player" EntitySet="Player" />
-            <End Role="GameLobby" EntitySet="GameLobby" />
-          </AssociationSet>
-          <AssociationSet Name="FK__LobbyPlay__Lobby__5AEE82B9" Association="Self.FK__LobbyPlay__Lobby__5AEE82B9">
-            <End Role="GameLobby" EntitySet="GameLobby" />
-            <End Role="LobbyPlayers" EntitySet="LobbyPlayers" />
-          </AssociationSet>
-          <AssociationSet Name="FK__GuestPlay__Statu__3E52440B" Association="Self.FK__GuestPlay__Statu__3E52440B">
-            <End Role="StatusPlayer" EntitySet="StatusPlayer" />
-            <End Role="GuestPlayers" EntitySet="GuestPlayers" />
-          </AssociationSet>
-          <AssociationSet Name="FK__LobbyPlay__Guest__5CD6CB2B" Association="Self.FK__LobbyPlay__Guest__5CD6CB2B">
-            <End Role="GuestPlayers" EntitySet="GuestPlayers" />
-            <End Role="LobbyPlayers" EntitySet="LobbyPlayers" />
-          </AssociationSet>
-          <AssociationSet Name="FK__LobbyPlay__Playe__5BE2A6F2" Association="Self.FK__LobbyPlay__Playe__5BE2A6F2">
-            <End Role="Player" EntitySet="Player" />
-            <End Role="LobbyPlayers" EntitySet="LobbyPlayers" />
           </AssociationSet>
           <AssociationSet Name="FK__PasswordR__Playe__4E88ABD4" Association="Self.FK__PasswordR__Playe__4E88ABD4">
             <End Role="Player" EntitySet="Player" />
@@ -681,9 +443,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="BMCModelStoreContainer" CdmEntityContainer="BMCContext">
+        <EntityContainerMapping StorageEntityContainer="BMCDBContextStoreContainer" CdmEntityContainer="BMCDBEntities">
           <EntitySetMapping Name="ChatMessages">
-            <EntityTypeMapping TypeName="BMCModel.ChatMessages">
+            <EntityTypeMapping TypeName="BMCDBContext.ChatMessages">
               <MappingFragment StoreEntitySet="ChatMessages">
                 <ScalarProperty Name="MessageID" ColumnName="MessageID" />
                 <ScalarProperty Name="SenderID" ColumnName="SenderID" />
@@ -694,7 +456,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="FriendRequest">
-            <EntityTypeMapping TypeName="BMCModel.FriendRequest">
+            <EntityTypeMapping TypeName="BMCDBContext.FriendRequest">
               <MappingFragment StoreEntitySet="FriendRequest">
                 <ScalarProperty Name="RequestID" ColumnName="RequestID" />
                 <ScalarProperty Name="SenderPlayerID" ColumnName="SenderPlayerID" />
@@ -703,38 +465,8 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="GameLobby">
-            <EntityTypeMapping TypeName="BMCModel.GameLobby">
-              <MappingFragment StoreEntitySet="GameLobby">
-                <ScalarProperty Name="LobbyID" ColumnName="LobbyID" />
-                <ScalarProperty Name="LobbyName" ColumnName="LobbyName" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="HostID" ColumnName="HostID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="GuestPlayers">
-            <EntityTypeMapping TypeName="BMCModel.GuestPlayers">
-              <MappingFragment StoreEntitySet="GuestPlayers">
-                <ScalarProperty Name="GuestID" ColumnName="GuestID" />
-                <ScalarProperty Name="Username" ColumnName="Username" />
-                <ScalarProperty Name="JoinDate" ColumnName="JoinDate" />
-                <ScalarProperty Name="StatusID" ColumnName="StatusID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="LobbyPlayers">
-            <EntityTypeMapping TypeName="BMCModel.LobbyPlayers">
-              <MappingFragment StoreEntitySet="LobbyPlayers">
-                <ScalarProperty Name="LobbyID" ColumnName="LobbyID" />
-                <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
-                <ScalarProperty Name="GuestID" ColumnName="GuestID" />
-                <ScalarProperty Name="PlayerStatus" ColumnName="PlayerStatus" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="PasswordResetRequests">
-            <EntityTypeMapping TypeName="BMCModel.PasswordResetRequests">
+            <EntityTypeMapping TypeName="BMCDBContext.PasswordResetRequests">
               <MappingFragment StoreEntitySet="PasswordResetRequests">
                 <ScalarProperty Name="ResetID" ColumnName="ResetID" />
                 <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
@@ -745,7 +477,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Player">
-            <EntityTypeMapping TypeName="BMCModel.Player">
+            <EntityTypeMapping TypeName="BMCDBContext.Player">
               <MappingFragment StoreEntitySet="Player">
                 <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
                 <ScalarProperty Name="Username" ColumnName="Username" />
@@ -755,7 +487,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Profile">
-            <EntityTypeMapping TypeName="BMCModel.Profile">
+            <EntityTypeMapping TypeName="BMCDBContext.Profile">
               <MappingFragment StoreEntitySet="Profile">
                 <ScalarProperty Name="ProfileID" ColumnName="ProfileID" />
                 <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
@@ -771,7 +503,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="StatusPlayer">
-            <EntityTypeMapping TypeName="BMCModel.StatusPlayer">
+            <EntityTypeMapping TypeName="BMCDBContext.StatusPlayer">
               <MappingFragment StoreEntitySet="StatusPlayer">
                 <ScalarProperty Name="StatusID" ColumnName="StatusID" />
                 <ScalarProperty Name="StatusName" ColumnName="StatusName" />
@@ -779,7 +511,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="UserScores">
-            <EntityTypeMapping TypeName="BMCModel.UserScores">
+            <EntityTypeMapping TypeName="BMCDBContext.UserScores">
               <MappingFragment StoreEntitySet="UserScores">
                 <ScalarProperty Name="ScoreID" ColumnName="ScoreID" />
                 <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />

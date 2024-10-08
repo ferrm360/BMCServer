@@ -13,10 +13,10 @@ namespace DataAccessBMC
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class BMCContext : DbContext
+    public partial class BMCDBEntities : DbContext
     {
-        public BMCContext()
-            : base("name=BMCContext")
+        public BMCDBEntities()
+            : base("name=BMCDBEntities")
         {
         }
     
@@ -27,9 +27,6 @@ namespace DataAccessBMC
     
         public virtual DbSet<ChatMessages> ChatMessages { get; set; }
         public virtual DbSet<FriendRequest> FriendRequest { get; set; }
-        public virtual DbSet<GameLobby> GameLobby { get; set; }
-        public virtual DbSet<GuestPlayers> GuestPlayers { get; set; }
-        public virtual DbSet<LobbyPlayers> LobbyPlayers { get; set; }
         public virtual DbSet<PasswordResetRequests> PasswordResetRequests { get; set; }
         public virtual DbSet<Player> Player { get; set; }
         public virtual DbSet<Profile> Profile { get; set; }

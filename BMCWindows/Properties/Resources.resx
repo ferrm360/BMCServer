@@ -132,4 +132,13 @@
   <data name="LoginLaberlPassword" xml:space="preserve">
     <value>Password</value>
   </data>
+  <data name="SignUpButtonSignUp" xml:space="preserve">
+    <value>Sign Up</value>
+  </data>
+  <data name="SignUpLabelConfirmPassword" xml:space="preserve">
+    <value>Confirm password</value>
+  </data>
+  <data name="SignUpLabelEmail" xml:space="preserve">
+    <value>Email</value>
+  </data>
 </root>

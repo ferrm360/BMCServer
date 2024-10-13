@@ -16,13 +16,24 @@ using System.Windows.Shapes;
 namespace BMCWindows
 {
     /// <summary>
-    /// Interaction logic for LogIn.xaml
+    /// Interaction logic for Login.xaml
     /// </summary>
-    public partial class LogIn : Page
+    public partial class StartPage : Page
     {
-        public LogIn()
+        public StartPage()
         {
             InitializeComponent();
         }
+
+        private void GoToLogInPage(Object sender, EventArgs e)
+        {
+            this.NavigationService.Navigate(new LogIn());
+        }
+
+        private void GoToSignUpPage(Object sender, EventArgs e)
+        {
+            this.NavigationService.Navigate(new SignUpWindow());
+        }
+
     }
 }

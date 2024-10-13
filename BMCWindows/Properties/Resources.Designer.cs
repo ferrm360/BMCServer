@@ -104,5 +104,32 @@ namespace BMCWindows.Properties {
                 return ResourceManager.GetString("LoginLaberlPassword", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sign Up.
+        /// </summary>
+        public static string SignUpButtonSignUp {
+            get {
+                return ResourceManager.GetString("SignUpButtonSignUp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Confirm password.
+        /// </summary>
+        public static string SignUpLabelConfirmPassword {
+            get {
+                return ResourceManager.GetString("SignUpLabelConfirmPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email.
+        /// </summary>
+        public static string SignUpLabelEmail {
+            get {
+                return ResourceManager.GetString("SignUpLabelEmail", resourceCulture);
+            }
+        }
     }
 }

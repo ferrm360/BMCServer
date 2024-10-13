@@ -55,7 +55,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="LogIn.xaml">
+    <Page Include="HomePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LogInWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SignUpWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -71,8 +79,11 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="LogIn.xaml.cs">
-      <DependentUpon>LogIn.xaml</DependentUpon>
+    <Compile Include="HomePage.xaml.cs">
+      <DependentUpon>HomePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LogInWindow.xaml.cs">
+      <DependentUpon>LogInWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.en-US.Designer.cs">
       <DependentUpon>Resources.en-US.resx</DependentUpon>
@@ -83,6 +94,9 @@
       <DependentUpon>Resources.es-MX.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="SignUpWindow.xaml.cs">
+      <DependentUpon>SignUpWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="StartPage.xaml.cs">
       <DependentUpon>StartPage.xaml</DependentUpon>
@@ -109,14 +123,17 @@
     <EmbeddedResource Include="Properties\Resources.en-US.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.en-US.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.es-MX.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.es-MX.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <Resource Include="Fonts\PressStart2P-Regular.ttf" />
     <None Include="Properties\Settings.settings">
@@ -128,28 +145,26 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Group 4.png" />
-    <Resource Include="Group 5.png" />
-    <Resource Include="Group 6.png" />
+    <Resource Include="Images\GreenRectangle.png" />
+    <Resource Include="Images\GreenButton.png" />
+    <Resource Include="Images\BrownGreenButton.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Group 7.png" />
-    <Resource Include="Group 8.png" />
+    <Resource Include="Images\Group 7.png" />
+    <Resource Include="Images\Group 8.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="grupo 7 largo.png" />
+    <Resource Include="Images\LongTextbox.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="TextBoxLabel.png" />
+    <Resource Include="Images\TextBoxLabel.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="ButtonGoBack.png" />
+    <Resource Include="Images\BrownButton.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="LogoBMC.png" />
+    <Resource Include="Images\LogoBMC.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Images\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

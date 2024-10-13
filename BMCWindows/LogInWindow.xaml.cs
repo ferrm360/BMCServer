@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BMCWindows.Validators;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -30,9 +31,32 @@ namespace BMCWindows
             this.NavigationService.GoBack();
         }
 
+
         private void GoToHomePage(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new HomePage());
+            Server.AccountServiceClient proxy = new Server.AccountServiceClient();
+            String user = textBoxUser.Text;
+            String password = textBoxPassword.Text;
+
+            if (!FieldValidator.AreFieldsEmpty(user, password))
+            {
+                var result = proxy.Login(user, password);
+                if (result.Success)
+                {
+                    this.NavigationService.Navigate(new HomePage());
+                }
+                else 
+                {
+                    MessageBox.Show(result.ErrorKey);
+                }
+            }
+            else 
+            {
+                MessageBox.Show("Hay campos vacíos");
+            }
+
+            
+
         }
     }
 }

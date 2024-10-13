@@ -37,6 +37,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -55,6 +57,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Validators\FieldValidator.cs" />
     <Page Include="HomePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -80,6 +83,11 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="ChatService.cs" />
+    <Compile Include="Connected Services\Server\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
@@ -137,6 +145,25 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <Resource Include="Fonts\PressStart2P-Regular.ttf" />
+    <None Include="Connected Services\Server\AccountService.wsdl" />
+    <None Include="Connected Services\Server\AccountService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Server\AccountService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Server\AccountService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Server\AccountService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Server\BMCWindows.Server.OperationResultOfanyType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Server\BMCWindows.Server.OperationResultOfPlayerDTOQo1Oyztf.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -166,6 +193,23 @@
   <ItemGroup>
     <Resource Include="Images\LogoBMC.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\Server\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Server\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Server\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Server\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,0 +1,355 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\neco3\\source\\repos\\ServidorV2\\Server\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CF7FDFE2-D7A4-43A0-B170-99B05628F50D}|Service\\Service.csproj|C:\\Users\\neco3\\source\\repos\\ServidorV2\\Server\\service\\implements\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF7FDFE2-D7A4-43A0-B170-99B05628F50D}|Service\\Service.csproj|solutionrelative:service\\implements\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF7FDFE2-D7A4-43A0-B170-99B05628F50D}|Service\\Service.csproj|C:\\Users\\neco3\\source\\repos\\ServidorV2\\Server\\service\\contracts\\iaccountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF7FDFE2-D7A4-43A0-B170-99B05628F50D}|Service\\Service.csproj|solutionrelative:service\\contracts\\iaccountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF7FDFE2-D7A4-43A0-B170-99B05628F50D}|Service\\Service.csproj|c:\\users\\neco3\\source\\repos\\servidorv2\\server\\service\\factories\\accountservicefactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF7FDFE2-D7A4-43A0-B170-99B05628F50D}|Service\\Service.csproj|solutionrelative:service\\factories\\accountservicefactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF7FDFE2-D7A4-43A0-B170-99B05628F50D}|Service\\Service.csproj|c:\\users\\neco3\\source\\repos\\servidorv2\\server\\service\\implements\\userconnectionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF7FDFE2-D7A4-43A0-B170-99B05628F50D}|Service\\Service.csproj|solutionrelative:service\\implements\\userconnectionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF7FDFE2-D7A4-43A0-B170-99B05628F50D}|Service\\Service.csproj|c:\\users\\neco3\\source\\repos\\servidorv2\\server\\service\\implements\\chatservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF7FDFE2-D7A4-43A0-B170-99B05628F50D}|Service\\Service.csproj|solutionrelative:service\\implements\\chatservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF7FDFE2-D7A4-43A0-B170-99B05628F50D}|Service\\Service.csproj|c:\\users\\neco3\\source\\repos\\servidorv2\\server\\service\\contracts\\iuserconnectionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF7FDFE2-D7A4-43A0-B170-99B05628F50D}|Service\\Service.csproj|solutionrelative:service\\contracts\\iuserconnectionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF7FDFE2-D7A4-43A0-B170-99B05628F50D}|Service\\Service.csproj|c:\\users\\neco3\\source\\repos\\servidorv2\\server\\service\\contracts\\ichatservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF7FDFE2-D7A4-43A0-B170-99B05628F50D}|Service\\Service.csproj|solutionrelative:service\\contracts\\ichatservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1EDC9AF2-347D-492B-8E1A-DE1583E2C090}|Host\\Host.csproj|C:\\Users\\neco3\\source\\repos\\ServidorV2\\Server\\host\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{1EDC9AF2-347D-492B-8E1A-DE1583E2C090}|Host\\Host.csproj|solutionrelative:host\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1EDC9AF2-347D-492B-8E1A-DE1583E2C090}|Host\\Host.csproj|c:\\users\\neco3\\source\\repos\\servidorv2\\server\\host\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1EDC9AF2-347D-492B-8E1A-DE1583E2C090}|Host\\Host.csproj|solutionrelative:host\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF7FDFE2-D7A4-43A0-B170-99B05628F50D}|Service\\Service.csproj|c:\\users\\neco3\\source\\repos\\servidorv2\\server\\service\\utilities\\helpers\\sqlerrorhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF7FDFE2-D7A4-43A0-B170-99B05628F50D}|Service\\Service.csproj|solutionrelative:service\\utilities\\helpers\\sqlerrorhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF7FDFE2-D7A4-43A0-B170-99B05628F50D}|Service\\Service.csproj|c:\\users\\neco3\\source\\repos\\servidorv2\\server\\service\\results\\resultgeneric.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF7FDFE2-D7A4-43A0-B170-99B05628F50D}|Service\\Service.csproj|solutionrelative:service\\results\\resultgeneric.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D36BD91C-0A4F-43CC-B01C-0665410F30F7}|DataAccess\\DataAccess.csproj|C:\\Users\\neco3\\source\\repos\\ServidorV2\\Server\\dataaccess\\repositories\\playerrepositoy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D36BD91C-0A4F-43CC-B01C-0665410F30F7}|DataAccess\\DataAccess.csproj|solutionrelative:dataaccess\\repositories\\playerrepositoy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF7FDFE2-D7A4-43A0-B170-99B05628F50D}|Service\\Service.csproj|C:\\Users\\neco3\\source\\repos\\ServidorV2\\Server\\service\\dto\\playerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF7FDFE2-D7A4-43A0-B170-99B05628F50D}|Service\\Service.csproj|solutionrelative:service\\dto\\playerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF7FDFE2-D7A4-43A0-B170-99B05628F50D}|Service\\Service.csproj|C:\\Users\\neco3\\source\\repos\\ServidorV2\\Server\\service\\utilities\\mapper\\playermapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF7FDFE2-D7A4-43A0-B170-99B05628F50D}|Service\\Service.csproj|solutionrelative:service\\utilities\\mapper\\playermapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF7FDFE2-D7A4-43A0-B170-99B05628F50D}|Service\\Service.csproj|C:\\Users\\neco3\\source\\repos\\ServidorV2\\Server\\service\\utilities\\helpers\\passwordhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF7FDFE2-D7A4-43A0-B170-99B05628F50D}|Service\\Service.csproj|solutionrelative:service\\utilities\\helpers\\passwordhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D36BD91C-0A4F-43CC-B01C-0665410F30F7}|DataAccess\\DataAccess.csproj|C:\\Users\\neco3\\source\\repos\\ServidorV2\\Server\\dataaccess\\repositories\\iplayerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D36BD91C-0A4F-43CC-B01C-0665410F30F7}|DataAccess\\DataAccess.csproj|solutionrelative:dataaccess\\repositories\\iplayerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D36BD91C-0A4F-43CC-B01C-0665410F30F7}|DataAccess\\DataAccess.csproj|C:\\Users\\neco3\\source\\repos\\ServidorV2\\Server\\dataaccess\\model1.context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D36BD91C-0A4F-43CC-B01C-0665410F30F7}|DataAccess\\DataAccess.csproj|solutionrelative:dataaccess\\model1.context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D36BD91C-0A4F-43CC-B01C-0665410F30F7}|DataAccess\\DataAccess.csproj|C:\\Users\\neco3\\source\\repos\\ServidorV2\\Server\\dataaccess\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
+      "RelativeMoniker": "D:0:0:{D36BD91C-0A4F-43CC-B01C-0665410F30F7}|DataAccess\\DataAccess.csproj|solutionrelative:dataaccess\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF7FDFE2-D7A4-43A0-B170-99B05628F50D}|Service\\Service.csproj|C:\\Users\\neco3\\source\\repos\\ServidorV2\\Server\\service\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF7FDFE2-D7A4-43A0-B170-99B05628F50D}|Service\\Service.csproj|solutionrelative:service\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D36BD91C-0A4F-43CC-B01C-0665410F30F7}|DataAccess\\DataAccess.csproj|C:\\Users\\neco3\\source\\repos\\ServidorV2\\Server\\dataaccess\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D36BD91C-0A4F-43CC-B01C-0665410F30F7}|DataAccess\\DataAccess.csproj|solutionrelative:dataaccess\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 15,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ChatService.cs",
+              "DocumentMoniker": "C:\\Users\\neco3\\source\\repos\\ServidorV2\\Server\\Service\\Implements\\ChatService.cs",
+              "RelativeDocumentMoniker": "Service\\Implements\\ChatService.cs",
+              "ToolTip": "C:\\Users\\neco3\\source\\repos\\ServidorV2\\Server\\Service\\Implements\\ChatService.cs",
+              "RelativeToolTip": "Service\\Implements\\ChatService.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-13T15:22:02.293Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserConnectionManager.cs",
+              "DocumentMoniker": "C:\\Users\\neco3\\source\\repos\\ServidorV2\\Server\\Service\\Implements\\UserConnectionManager.cs",
+              "RelativeDocumentMoniker": "Service\\Implements\\UserConnectionManager.cs",
+              "ToolTip": "C:\\Users\\neco3\\source\\repos\\ServidorV2\\Server\\Service\\Implements\\UserConnectionManager.cs",
+              "RelativeToolTip": "Service\\Implements\\UserConnectionManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-13T15:20:16.032Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IUserConnectionManager.cs",
+              "DocumentMoniker": "C:\\Users\\neco3\\source\\repos\\ServidorV2\\Server\\Service\\Contracts\\IUserConnectionManager.cs",
+              "RelativeDocumentMoniker": "Service\\Contracts\\IUserConnectionManager.cs",
+              "ToolTip": "C:\\Users\\neco3\\source\\repos\\ServidorV2\\Server\\Service\\Contracts\\IUserConnectionManager.cs",
+              "RelativeToolTip": "Service\\Contracts\\IUserConnectionManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-13T15:19:50.82Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IChatService.cs",
+              "DocumentMoniker": "C:\\Users\\neco3\\source\\repos\\ServidorV2\\Server\\Service\\Contracts\\IChatService.cs",
+              "RelativeDocumentMoniker": "Service\\Contracts\\IChatService.cs",
+              "ToolTip": "C:\\Users\\neco3\\source\\repos\\ServidorV2\\Server\\Service\\Contracts\\IChatService.cs",
+              "RelativeToolTip": "Service\\Contracts\\IChatService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-13T15:17:58.093Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "SqlErrorHandler.cs",
+              "DocumentMoniker": "C:\\Users\\neco3\\source\\repos\\ServidorV2\\Server\\Service\\Utilities\\Helpers\\SqlErrorHandler.cs",
+              "RelativeDocumentMoniker": "Service\\Utilities\\Helpers\\SqlErrorHandler.cs",
+              "ToolTip": "C:\\Users\\neco3\\source\\repos\\ServidorV2\\Server\\Service\\Utilities\\Helpers\\SqlErrorHandler.cs",
+              "RelativeToolTip": "Service\\Utilities\\Helpers\\SqlErrorHandler.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAowBYAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-13T15:07:44.937Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ResultGeneric.cs",
+              "DocumentMoniker": "C:\\Users\\neco3\\source\\repos\\ServidorV2\\Server\\Service\\Results\\ResultGeneric.cs",
+              "RelativeDocumentMoniker": "Service\\Results\\ResultGeneric.cs",
+              "ToolTip": "C:\\Users\\neco3\\source\\repos\\ServidorV2\\Server\\Service\\Results\\ResultGeneric.cs",
+              "RelativeToolTip": "Service\\Results\\ResultGeneric.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-13T14:58:11.491Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AccountServiceFactory.cs",
+              "DocumentMoniker": "C:\\Users\\neco3\\source\\repos\\ServidorV2\\Server\\Service\\Factories\\AccountServiceFactory.cs",
+              "RelativeDocumentMoniker": "Service\\Factories\\AccountServiceFactory.cs",
+              "ToolTip": "C:\\Users\\neco3\\source\\repos\\ServidorV2\\Server\\Service\\Factories\\AccountServiceFactory.cs",
+              "RelativeToolTip": "Service\\Factories\\AccountServiceFactory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-13T14:33:43.384Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "App.config",
+              "DocumentMoniker": "C:\\Users\\neco3\\source\\repos\\ServidorV2\\Server\\Host\\App.config",
+              "RelativeDocumentMoniker": "Host\\App.config",
+              "ToolTip": "C:\\Users\\neco3\\source\\repos\\ServidorV2\\Server\\Host\\App.config",
+              "RelativeToolTip": "Host\\App.config",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAAABkAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-10-13T13:55:29Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Model1.Context.cs",
+              "DocumentMoniker": "C:\\Users\\neco3\\source\\repos\\ServidorV2\\Server\\DataAccess\\Model1.Context.cs",
+              "RelativeDocumentMoniker": "DataAccess\\Model1.Context.cs",
+              "ToolTip": "C:\\Users\\neco3\\source\\repos\\ServidorV2\\Server\\DataAccess\\Model1.Context.cs",
+              "RelativeToolTip": "DataAccess\\Model1.Context.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-13T13:47:59.717Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "IPlayerRepository.cs",
+              "DocumentMoniker": "C:\\Users\\neco3\\source\\repos\\ServidorV2\\Server\\DataAccess\\Repositories\\IPlayerRepository.cs",
+              "RelativeDocumentMoniker": "DataAccess\\Repositories\\IPlayerRepository.cs",
+              "ToolTip": "C:\\Users\\neco3\\source\\repos\\ServidorV2\\Server\\DataAccess\\Repositories\\IPlayerRepository.cs",
+              "RelativeToolTip": "DataAccess\\Repositories\\IPlayerRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-13T13:46:55.6Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "PlayerRepositoy.cs",
+              "DocumentMoniker": "C:\\Users\\neco3\\source\\repos\\ServidorV2\\Server\\DataAccess\\Repositories\\PlayerRepositoy.cs",
+              "RelativeDocumentMoniker": "DataAccess\\Repositories\\PlayerRepositoy.cs",
+              "ToolTip": "C:\\Users\\neco3\\source\\repos\\ServidorV2\\Server\\DataAccess\\Repositories\\PlayerRepositoy.cs",
+              "RelativeToolTip": "DataAccess\\Repositories\\PlayerRepositoy.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAswBIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-13T13:44:59.968Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "PasswordHelper.cs",
+              "DocumentMoniker": "C:\\Users\\neco3\\source\\repos\\ServidorV2\\Server\\Service\\Utilities\\Helpers\\PasswordHelper.cs",
+              "RelativeDocumentMoniker": "Service\\Utilities\\Helpers\\PasswordHelper.cs",
+              "ToolTip": "C:\\Users\\neco3\\source\\repos\\ServidorV2\\Server\\Service\\Utilities\\Helpers\\PasswordHelper.cs",
+              "RelativeToolTip": "Service\\Utilities\\Helpers\\PasswordHelper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-13T13:44:05.353Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "PlayerDTO.cs",
+              "DocumentMoniker": "C:\\Users\\neco3\\source\\repos\\ServidorV2\\Server\\Service\\DTO\\PlayerDTO.cs",
+              "RelativeDocumentMoniker": "Service\\DTO\\PlayerDTO.cs",
+              "ToolTip": "C:\\Users\\neco3\\source\\repos\\ServidorV2\\Server\\Service\\DTO\\PlayerDTO.cs",
+              "RelativeToolTip": "Service\\DTO\\PlayerDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-13T13:43:19.61Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "PlayerMapper.cs",
+              "DocumentMoniker": "C:\\Users\\neco3\\source\\repos\\ServidorV2\\Server\\Service\\Utilities\\Mapper\\PlayerMapper.cs",
+              "RelativeDocumentMoniker": "Service\\Utilities\\Mapper\\PlayerMapper.cs",
+              "ToolTip": "C:\\Users\\neco3\\source\\repos\\ServidorV2\\Server\\Service\\Utilities\\Mapper\\PlayerMapper.cs",
+              "RelativeToolTip": "Service\\Utilities\\Mapper\\PlayerMapper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-13T13:41:37.633Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AccountService.cs",
+              "DocumentMoniker": "C:\\Users\\neco3\\source\\repos\\ServidorV2\\Server\\Service\\Implements\\AccountService.cs",
+              "RelativeDocumentMoniker": "Service\\Implements\\AccountService.cs",
+              "ToolTip": "C:\\Users\\neco3\\source\\repos\\ServidorV2\\Server\\Service\\Implements\\AccountService.cs",
+              "RelativeToolTip": "Service\\Implements\\AccountService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-13T13:39:14.707Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IAccountService.cs",
+              "DocumentMoniker": "C:\\Users\\neco3\\source\\repos\\ServidorV2\\Server\\Service\\Contracts\\IAccountService.cs",
+              "RelativeDocumentMoniker": "Service\\Contracts\\IAccountService.cs",
+              "ToolTip": "C:\\Users\\neco3\\source\\repos\\ServidorV2\\Server\\Service\\Contracts\\IAccountService.cs",
+              "RelativeToolTip": "Service\\Contracts\\IAccountService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-13T13:29:24.075Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Model1.edmx [Diagram1]",
+              "DocumentMoniker": "C:\\Users\\neco3\\source\\repos\\ServidorV2\\Server\\DataAccess\\Model1.edmx",
+              "RelativeDocumentMoniker": "DataAccess\\Model1.edmx",
+              "ToolTip": "C:\\Users\\neco3\\source\\repos\\ServidorV2\\Server\\DataAccess\\Model1.edmx [Diagram1]",
+              "RelativeToolTip": "DataAccess\\Model1.edmx [Diagram1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
+              "WhenOpened": "2024-10-13T13:26:38.582Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\Users\\neco3\\source\\repos\\ServidorV2\\Server\\Service\\Class1.cs",
+              "RelativeDocumentMoniker": "Service\\Class1.cs",
+              "ToolTip": "C:\\Users\\neco3\\source\\repos\\ServidorV2\\Server\\Service\\Class1.cs",
+              "RelativeToolTip": "Service\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-13T13:21:49.144Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\Users\\neco3\\source\\repos\\ServidorV2\\Server\\DataAccess\\Class1.cs",
+              "RelativeDocumentMoniker": "DataAccess\\Class1.cs",
+              "ToolTip": "C:\\Users\\neco3\\source\\repos\\ServidorV2\\Server\\DataAccess\\Class1.cs",
+              "RelativeToolTip": "DataAccess\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-13T13:21:24.428Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\neco3\\source\\repos\\ServidorV2\\Server\\Host\\Program.cs",
+              "RelativeDocumentMoniker": "Host\\Program.cs",
+              "ToolTip": "C:\\Users\\neco3\\source\\repos\\ServidorV2\\Server\\Host\\Program.cs",
+              "RelativeToolTip": "Host\\Program.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAcwBgAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-13T13:20:45.184Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

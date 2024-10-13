@@ -1,0 +1,15 @@
+C:\Users\neco3\source\repos\ServidorV2\Server\Host\bin\Debug\Host.exe.config
+C:\Users\neco3\source\repos\ServidorV2\Server\Host\bin\Debug\Host.exe
+C:\Users\neco3\source\repos\ServidorV2\Server\Host\bin\Debug\Host.pdb
+C:\Users\neco3\source\repos\ServidorV2\Server\Host\bin\Debug\Service.dll
+C:\Users\neco3\source\repos\ServidorV2\Server\Host\bin\Debug\DataAccess.dll
+C:\Users\neco3\source\repos\ServidorV2\Server\Host\bin\Debug\EntityFramework.dll
+C:\Users\neco3\source\repos\ServidorV2\Server\Host\bin\Debug\Service.pdb
+C:\Users\neco3\source\repos\ServidorV2\Server\Host\bin\Debug\DataAccess.pdb
+C:\Users\neco3\source\repos\ServidorV2\Server\Host\bin\Debug\DataAccess.dll.config
+C:\Users\neco3\source\repos\ServidorV2\Server\Host\bin\Debug\EntityFramework.xml
+C:\Users\neco3\source\repos\ServidorV2\Server\Host\obj\Debug\Host.csproj.AssemblyReference.cache
+C:\Users\neco3\source\repos\ServidorV2\Server\Host\obj\Debug\Host.csproj.CoreCompileInputs.cache
+C:\Users\neco3\source\repos\ServidorV2\Server\Host\obj\Debug\Host.csproj.Up2Date
+C:\Users\neco3\source\repos\ServidorV2\Server\Host\obj\Debug\Host.exe
+C:\Users\neco3\source\repos\ServidorV2\Server\Host\obj\Debug\Host.pdb

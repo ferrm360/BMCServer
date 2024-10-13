@@ -23,10 +23,13 @@ namespace BMCWindows
     {
         public ObservableCollection<Friend> Friends { get; set; }
         public ObservableCollection<Message> Messages { get; set; }
+        public ChatService chatService = new ChatService();
 
         public HomePage()
         {
             InitializeComponent();
+            LoadRecentMessages();
+
             Friends = new ObservableCollection<Friend>
 
         {
@@ -56,17 +59,17 @@ namespace BMCWindows
 
         private void FriendsList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (FriendsList.SelectedItem != null)
+            if (Chat.SelectedItem != null)
             {
                 // Oculta la lista de amigos y muestra el chat
-                FriendsList.Visibility = Visibility.Collapsed;
+                Chat.Visibility = Visibility.Collapsed;
                 ChatGrid.Visibility = Visibility.Visible;
 
                 // Carga los mensajes de ejemplo
                 Messages = new ObservableCollection<Message>
             {
                 new Message { Sender = "Yo", Messages = "Hola!", TimeSent = DateTime.Now.AddMinutes(-10) },
-                new Message { Sender = ((Friend)FriendsList.SelectedItem).Name, Messages = "Hola, ¿cómo estás?", TimeSent = DateTime.Now.AddMinutes(-9) }
+                new Message { Sender = ((Friend)Chat.SelectedItem).Name, Messages = "Hola, ¿cómo estás?", TimeSent = DateTime.Now.AddMinutes(-9) }
             };
 
                 MessagesList.ItemsSource = Messages;
@@ -87,6 +90,32 @@ namespace BMCWindows
                 MessageTextBox.Clear();
             }
         }
+
+        private void BackToFriends_Click(object sender, RoutedEventArgs e)
+        {
+            ChatGrid.Visibility = Visibility.Collapsed;
+            Chat.Visibility = Visibility.Visible;
+        }
+
+        private void LoadRecentMessages()
+        {
+            generalMessages.ItemsSource = null;  // Limpiar la fuente de datos
+            var recentMessages = chatService.GetRecentMessages();
+            generalMessages.ItemsSource = recentMessages;
+        }
+
+        private void SendGeneralMessage_Click(object sender, RoutedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(textboxGeneralChat.Text))
+            {
+                chatService.AddMessage("Yo", textboxGeneralChat.Text);
+                textboxGeneralChat.Clear();
+
+                // Actualizar los mensajes mostrados en la interfaz
+                LoadRecentMessages();
+            }
+        }
+
     }
 
     public class Friend

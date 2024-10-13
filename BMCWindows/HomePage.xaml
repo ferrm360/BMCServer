@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:BMCWindows"
+      xmlns:p="clr-namespace:BMCWindows.Properties"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="HomePage"
@@ -28,15 +29,16 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="133*"/>
                 <RowDefinition Height="37*"/>
-                <RowDefinition Height="280*"/>
+                <RowDefinition Height="178*"/>
+                <RowDefinition Height="102*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="43*"/>
                 <ColumnDefinition Width="117*"/>
             </Grid.ColumnDefinitions>
 
-            <TextBox x:Name="textBoxSearchFriends" Grid.Row="1" Margin="5" Padding="3"/>
-            <ListBox x:Name="FriendsList" Grid.Row="2" Margin="10,10,10,10">
+            <TextBox x:Name="textBoxSearchFriends" Grid.Row="1" Margin="5,5,5,5" Padding="3"/>
+            <ListBox x:Name="FriendsList" Grid.Row="2" Margin="10,10,10,10" Visibility="Visible">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Border Background="#DDD" Margin="2" CornerRadius="5">
@@ -84,20 +86,25 @@
                 </StackPanel>
             </Border>
         </Expander>
-        
+
         <Grid x:Name="ChatGrid" Visibility="Collapsed" Margin="10,0,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="268*"/>
+                <ColumnDefinition Width="127*"/>
+            </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="127*"/>
+                <RowDefinition Height="78*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
             <!-- List of Messages -->
-            <ListBox x:Name="MessagesList" Grid.Row="0" Margin="10">
+            <ListBox x:Name="MessagesList" Grid.Row="1" Margin="10,10,10,10" Grid.RowSpan="2" Grid.ColumnSpan="2" Grid.Column="1">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Vertical">
                             <TextBlock Text="{Binding Sender}" FontWeight="Bold"/>
-                            <TextBlock Text="{Binding Message}" TextWrapping="Wrap"/>
+                            <TextBlock Text="{Binding Messages}" TextWrapping="Wrap"/>
                             <TextBlock Text="{Binding TimeSent}" FontStyle="Italic" FontSize="10" HorizontalAlignment="Right"/>
                         </StackPanel>
                     </DataTemplate>
@@ -105,14 +112,48 @@
             </ListBox>
 
             <!-- Message Input -->
-            <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="10">
+            <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="10,10,10,10" Grid.ColumnSpan="2" HorizontalAlignment="Right">
                 <TextBox x:Name="MessageTextBox" Width="200" Margin="0,0,5,0"/>
                 <Button Content="Enviar" Click="SendMessage_Click"/>
             </StackPanel>
+            <Button Content="{x:Static p:Resources.GloblalButtonCancel}" Click="BackToFriends_Click" Grid.Column="1" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,15,20,0"/>
+
+        </Grid>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="533*"/>
+                <ColumnDefinition Width="267*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="172*"/>
+                <RowDefinition Height="33*"/>
+                <RowDefinition Height="Auto" MinHeight="39.96"/>
+            </Grid.RowDefinitions>
+
+            <!-- Lista de mensajes -->
+            <ListBox x:Name="generalMessages" Grid.Row="1" Margin="10,2,10,10">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text="{Binding Sender}" FontWeight="Bold"/>
+                            <TextBlock Text="{Binding Messages}" TextWrapping="Wrap"/>
+                            <TextBlock Text="{Binding TimeSent}" FontStyle="Italic" FontSize="10" HorizontalAlignment="Right"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+            <!-- Entrada de mensaje -->
+            <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="10,10,10,10">
+                <TextBox x:Name="textboxGeneralChat" Width="200" Margin="0,0,5,0"/>
+                <Button Content="Enviar" Click="SendGeneralMessage_Click"/>
+            </StackPanel>
+
         </Grid>
 
     </Grid>
-    
+
 
 
 

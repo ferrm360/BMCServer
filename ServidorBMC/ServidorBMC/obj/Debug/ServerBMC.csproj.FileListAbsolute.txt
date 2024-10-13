@@ -1,0 +1,7 @@
+C:\Users\marla\Source\Repos\BMCServer\ServidorBMC\ServidorBMC\bin\Debug\ServidorBMC.exe.config
+C:\Users\marla\Source\Repos\BMCServer\ServidorBMC\ServidorBMC\bin\Debug\ServidorBMC.exe
+C:\Users\marla\Source\Repos\BMCServer\ServidorBMC\ServidorBMC\bin\Debug\ServidorBMC.pdb
+C:\Users\marla\Source\Repos\BMCServer\ServidorBMC\ServidorBMC\obj\Debug\ServerBMC.csproj.AssemblyReference.cache
+C:\Users\marla\Source\Repos\BMCServer\ServidorBMC\ServidorBMC\obj\Debug\ServerBMC.csproj.CoreCompileInputs.cache
+C:\Users\marla\Source\Repos\BMCServer\ServidorBMC\ServidorBMC\obj\Debug\ServidorBMC.exe
+C:\Users\marla\Source\Repos\BMCServer\ServidorBMC\ServidorBMC\obj\Debug\ServidorBMC.pdb

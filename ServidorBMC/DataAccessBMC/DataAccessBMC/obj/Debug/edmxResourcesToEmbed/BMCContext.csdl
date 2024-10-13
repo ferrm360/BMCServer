@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BMCDBContext" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ChatMessages">
+    <Key>
+      <PropertyRef Name="MessageID" />
+    </Key>
+    <Property Name="MessageID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SenderID" Type="Int32" Nullable="false" />
+    <Property Name="ReceiverID" Type="Int32" Nullable="false" />
+    <Property Name="MessageText" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Timestamp" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Player" Relationship="Self.FK__ChatMessa__Recei__4AB81AF0" FromRole="ChatMessages" ToRole="Player" />
+    <NavigationProperty Name="Player1" Relationship="Self.FK__ChatMessa__Sende__49C3F6B7" FromRole="ChatMessages" ToRole="Player" />
+  </EntityType>
+  <EntityType Name="FriendRequest">
+    <Key>
+      <PropertyRef Name="RequestID" />
+    </Key>
+    <Property Name="RequestID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SenderPlayerID" Type="Int32" Nullable="false" />
+    <Property Name="ReceiverPlayerID" Type="Int32" Nullable="false" />
+    <Property Name="RequestStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Player" Relationship="Self.FK__FriendReq__Recei__45F365D3" FromRole="FriendRequest" ToRole="Player" />
+    <NavigationProperty Name="Player1" Relationship="Self.FK__FriendReq__Sende__44FF419A" FromRole="FriendRequest" ToRole="Player" />
+  </EntityType>
+  <EntityType Name="PasswordResetRequests">
+    <Key>
+      <PropertyRef Name="ResetID" />
+    </Key>
+    <Property Name="ResetID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PlayerID" Type="Int32" Nullable="false" />
+    <Property Name="ResetCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ExpirationDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IsUsed" Type="Boolean" />
+    <NavigationProperty Name="Player" Relationship="Self.FK__PasswordR__Playe__4E88ABD4" FromRole="PasswordResetRequests" ToRole="Player" />
+  </EntityType>
+  <EntityType Name="Player">
+    <Key>
+      <PropertyRef Name="PlayerID" />
+    </Key>
+    <Property Name="PlayerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PasswordHash" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="ChatMessages" Relationship="Self.FK__ChatMessa__Recei__4AB81AF0" FromRole="Player" ToRole="ChatMessages" />
+    <NavigationProperty Name="ChatMessages1" Relationship="Self.FK__ChatMessa__Sende__49C3F6B7" FromRole="Player" ToRole="ChatMessages" />
+    <NavigationProperty Name="FriendRequest" Relationship="Self.FK__FriendReq__Recei__45F365D3" FromRole="Player" ToRole="FriendRequest" />
+    <NavigationProperty Name="FriendRequest1" Relationship="Self.FK__FriendReq__Sende__44FF419A" FromRole="Player" ToRole="FriendRequest" />
+    <NavigationProperty Name="PasswordResetRequests" Relationship="Self.FK__PasswordR__Playe__4E88ABD4" FromRole="Player" ToRole="PasswordResetRequests" />
+    <NavigationProperty Name="Profile" Relationship="Self.FK__Profile__PlayerI__5441852A" FromRole="Player" ToRole="Profile" />
+    <NavigationProperty Name="UserScores" Relationship="Self.FK__UserScore__Playe__412EB0B6" FromRole="Player" ToRole="UserScores" />
+  </EntityType>
+  <EntityType Name="Profile">
+    <Key>
+      <PropertyRef Name="ProfileID" />
+    </Key>
+    <Property Name="ProfileID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PlayerID" Type="Int32" Nullable="false" />
+    <Property Name="FullName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="AvatarURL" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Bio" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="StatusID" Type="Int32" Nullable="false" />
+    <Property Name="JoinDate" Type="DateTime" Precision="3" />
+    <Property Name="SignUpDate" Type="DateTime" Precision="0" />
+    <Property Name="LastVisit" Type="DateTime" Precision="0" />
+    <Property Name="LastUpdated" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Player" Relationship="Self.FK__Profile__PlayerI__5441852A" FromRole="Profile" ToRole="Player" />
+    <NavigationProperty Name="StatusPlayer" Relationship="Self.FK__Profile__StatusI__5535A963" FromRole="Profile" ToRole="StatusPlayer" />
+  </EntityType>
+  <EntityType Name="StatusPlayer">
+    <Key>
+      <PropertyRef Name="StatusID" />
+    </Key>
+    <Property Name="StatusID" Type="Int32" Nullable="false" />
+    <Property Name="StatusName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Profile" Relationship="Self.FK__Profile__StatusI__5535A963" FromRole="StatusPlayer" ToRole="Profile" />
+  </EntityType>
+  <EntityType Name="UserScores">
+    <Key>
+      <PropertyRef Name="ScoreID" />
+    </Key>
+    <Property Name="ScoreID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PlayerID" Type="Int32" Nullable="false" />
+    <Property Name="Wins" Type="Int32" Nullable="false" />
+    <Property Name="Losses" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Player" Relationship="Self.FK__UserScore__Playe__412EB0B6" FromRole="UserScores" ToRole="Player" />
+  </EntityType>
+  <Association Name="FK__ChatMessa__Recei__4AB81AF0">
+    <End Role="Player" Type="Self.Player" Multiplicity="1" />
+    <End Role="ChatMessages" Type="Self.ChatMessages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Player">
+        <PropertyRef Name="PlayerID" />
+      </Principal>
+      <Dependent Role="ChatMessages">
+        <PropertyRef Name="ReceiverID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ChatMessa__Sende__49C3F6B7">
+    <End Role="Player" Type="Self.Player" Multiplicity="1" />
+    <End Role="ChatMessages" Type="Self.ChatMessages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Player">
+        <PropertyRef Name="PlayerID" />
+      </Principal>
+      <Dependent Role="ChatMessages">
+        <PropertyRef Name="SenderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__FriendReq__Recei__45F365D3">
+    <End Role="Player" Type="Self.Player" Multiplicity="1" />
+    <End Role="FriendRequest" Type="Self.FriendRequest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Player">
+        <PropertyRef Name="PlayerID" />
+      </Principal>
+      <Dependent Role="FriendRequest">
+        <PropertyRef Name="ReceiverPlayerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__FriendReq__Sende__44FF419A">
+    <End Role="Player" Type="Self.Player" Multiplicity="1" />
+    <End Role="FriendRequest" Type="Self.FriendRequest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Player">
+        <PropertyRef Name="PlayerID" />
+      </Principal>
+      <Dependent Role="FriendRequest">
+        <PropertyRef Name="SenderPlayerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PasswordR__Playe__4E88ABD4">
+    <End Role="Player" Type="Self.Player" Multiplicity="1" />
+    <End Role="PasswordResetRequests" Type="Self.PasswordResetRequests" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Player">
+        <PropertyRef Name="PlayerID" />
+      </Principal>
+      <Dependent Role="PasswordResetRequests">
+        <PropertyRef Name="PlayerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Profile__PlayerI__5441852A">
+    <End Role="Player" Type="Self.Player" Multiplicity="1" />
+    <End Role="Profile" Type="Self.Profile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Player">
+        <PropertyRef Name="PlayerID" />
+      </Principal>
+      <Dependent Role="Profile">
+        <PropertyRef Name="PlayerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UserScore__Playe__412EB0B6">
+    <End Role="Player" Type="Self.Player" Multiplicity="1" />
+    <End Role="UserScores" Type="Self.UserScores" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Player">
+        <PropertyRef Name="PlayerID" />
+      </Principal>
+      <Dependent Role="UserScores">
+        <PropertyRef Name="PlayerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Profile__StatusI__5535A963">
+    <End Role="StatusPlayer" Type="Self.StatusPlayer" Multiplicity="1" />
+    <End Role="Profile" Type="Self.Profile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StatusPlayer">
+        <PropertyRef Name="StatusID" />
+      </Principal>
+      <Dependent Role="Profile">
+        <PropertyRef Name="StatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BMCDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ChatMessages" EntityType="Self.ChatMessages" />
+    <EntitySet Name="FriendRequest" EntityType="Self.FriendRequest" />
+    <EntitySet Name="PasswordResetRequests" EntityType="Self.PasswordResetRequests" />
+    <EntitySet Name="Player" EntityType="Self.Player" />
+    <EntitySet Name="Profile" EntityType="Self.Profile" />
+    <EntitySet Name="StatusPlayer" EntityType="Self.StatusPlayer" />
+    <EntitySet Name="UserScores" EntityType="Self.UserScores" />
+    <AssociationSet Name="FK__ChatMessa__Recei__4AB81AF0" Association="Self.FK__ChatMessa__Recei__4AB81AF0">
+      <End Role="Player" EntitySet="Player" />
+      <End Role="ChatMessages" EntitySet="ChatMessages" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ChatMessa__Sende__49C3F6B7" Association="Self.FK__ChatMessa__Sende__49C3F6B7">
+      <End Role="Player" EntitySet="Player" />
+      <End Role="ChatMessages" EntitySet="ChatMessages" />
+    </AssociationSet>
+    <AssociationSet Name="FK__FriendReq__Recei__45F365D3" Association="Self.FK__FriendReq__Recei__45F365D3">
+      <End Role="Player" EntitySet="Player" />
+      <End Role="FriendRequest" EntitySet="FriendRequest" />
+    </AssociationSet>
+    <AssociationSet Name="FK__FriendReq__Sende__44FF419A" Association="Self.FK__FriendReq__Sende__44FF419A">
+      <End Role="Player" EntitySet="Player" />
+      <End Role="FriendRequest" EntitySet="FriendRequest" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PasswordR__Playe__4E88ABD4" Association="Self.FK__PasswordR__Playe__4E88ABD4">
+      <End Role="Player" EntitySet="Player" />
+      <End Role="PasswordResetRequests" EntitySet="PasswordResetRequests" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Profile__PlayerI__5441852A" Association="Self.FK__Profile__PlayerI__5441852A">
+      <End Role="Player" EntitySet="Player" />
+      <End Role="Profile" EntitySet="Profile" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UserScore__Playe__412EB0B6" Association="Self.FK__UserScore__Playe__412EB0B6">
+      <End Role="Player" EntitySet="Player" />
+      <End Role="UserScores" EntitySet="UserScores" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Profile__StatusI__5535A963" Association="Self.FK__Profile__StatusI__5535A963">
+      <End Role="StatusPlayer" EntitySet="StatusPlayer" />
+      <End Role="Profile" EntitySet="Profile" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

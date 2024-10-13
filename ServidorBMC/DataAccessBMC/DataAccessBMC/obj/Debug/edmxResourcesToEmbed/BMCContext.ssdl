@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BMCDBContext.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ChatMessages">
+    <Key>
+      <PropertyRef Name="MessageID" />
+    </Key>
+    <Property Name="MessageID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SenderID" Type="int" Nullable="false" />
+    <Property Name="ReceiverID" Type="int" Nullable="false" />
+    <Property Name="MessageText" Type="nvarchar(max)" />
+    <Property Name="Timestamp" Type="datetime" />
+  </EntityType>
+  <EntityType Name="FriendRequest">
+    <Key>
+      <PropertyRef Name="RequestID" />
+    </Key>
+    <Property Name="RequestID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SenderPlayerID" Type="int" Nullable="false" />
+    <Property Name="ReceiverPlayerID" Type="int" Nullable="false" />
+    <Property Name="RequestStatus" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PasswordResetRequests">
+    <Key>
+      <PropertyRef Name="ResetID" />
+    </Key>
+    <Property Name="ResetID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PlayerID" Type="int" Nullable="false" />
+    <Property Name="ResetCode" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="ExpirationDate" Type="datetime" Nullable="false" />
+    <Property Name="IsUsed" Type="bit" />
+  </EntityType>
+  <EntityType Name="Player">
+    <Key>
+      <PropertyRef Name="PlayerID" />
+    </Key>
+    <Property Name="PlayerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="PasswordHash" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Profile">
+    <Key>
+      <PropertyRef Name="ProfileID" />
+    </Key>
+    <Property Name="ProfileID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PlayerID" Type="int" Nullable="false" />
+    <Property Name="FullName" Type="varchar" MaxLength="255" />
+    <Property Name="AvatarURL" Type="varchar" MaxLength="255" />
+    <Property Name="Bio" Type="text" />
+    <Property Name="StatusID" Type="int" Nullable="false" />
+    <Property Name="JoinDate" Type="datetime" />
+    <Property Name="SignUpDate" Type="date" />
+    <Property Name="LastVisit" Type="date" />
+    <Property Name="LastUpdated" Type="date" />
+  </EntityType>
+  <EntityType Name="StatusPlayer">
+    <Key>
+      <PropertyRef Name="StatusID" />
+    </Key>
+    <Property Name="StatusID" Type="int" Nullable="false" />
+    <Property Name="StatusName" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserScores">
+    <Key>
+      <PropertyRef Name="ScoreID" />
+    </Key>
+    <Property Name="ScoreID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PlayerID" Type="int" Nullable="false" />
+    <Property Name="Wins" Type="int" Nullable="false" />
+    <Property Name="Losses" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__ChatMessa__Recei__4AB81AF0">
+    <End Role="Player" Type="Self.Player" Multiplicity="1" />
+    <End Role="ChatMessages" Type="Self.ChatMessages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Player">
+        <PropertyRef Name="PlayerID" />
+      </Principal>
+      <Dependent Role="ChatMessages">
+        <PropertyRef Name="ReceiverID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ChatMessa__Sende__49C3F6B7">
+    <End Role="Player" Type="Self.Player" Multiplicity="1" />
+    <End Role="ChatMessages" Type="Self.ChatMessages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Player">
+        <PropertyRef Name="PlayerID" />
+      </Principal>
+      <Dependent Role="ChatMessages">
+        <PropertyRef Name="SenderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__FriendReq__Recei__45F365D3">
+    <End Role="Player" Type="Self.Player" Multiplicity="1" />
+    <End Role="FriendRequest" Type="Self.FriendRequest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Player">
+        <PropertyRef Name="PlayerID" />
+      </Principal>
+      <Dependent Role="FriendRequest">
+        <PropertyRef Name="ReceiverPlayerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__FriendReq__Sende__44FF419A">
+    <End Role="Player" Type="Self.Player" Multiplicity="1" />
+    <End Role="FriendRequest" Type="Self.FriendRequest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Player">
+        <PropertyRef Name="PlayerID" />
+      </Principal>
+      <Dependent Role="FriendRequest">
+        <PropertyRef Name="SenderPlayerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PasswordR__Playe__4E88ABD4">
+    <End Role="Player" Type="Self.Player" Multiplicity="1" />
+    <End Role="PasswordResetRequests" Type="Self.PasswordResetRequests" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Player">
+        <PropertyRef Name="PlayerID" />
+      </Principal>
+      <Dependent Role="PasswordResetRequests">
+        <PropertyRef Name="PlayerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Profile__PlayerI__5441852A">
+    <End Role="Player" Type="Self.Player" Multiplicity="1" />
+    <End Role="Profile" Type="Self.Profile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Player">
+        <PropertyRef Name="PlayerID" />
+      </Principal>
+      <Dependent Role="Profile">
+        <PropertyRef Name="PlayerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Profile__StatusI__5535A963">
+    <End Role="StatusPlayer" Type="Self.StatusPlayer" Multiplicity="1" />
+    <End Role="Profile" Type="Self.Profile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StatusPlayer">
+        <PropertyRef Name="StatusID" />
+      </Principal>
+      <Dependent Role="Profile">
+        <PropertyRef Name="StatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UserScore__Playe__412EB0B6">
+    <End Role="Player" Type="Self.Player" Multiplicity="1" />
+    <End Role="UserScores" Type="Self.UserScores" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Player">
+        <PropertyRef Name="PlayerID" />
+      </Principal>
+      <Dependent Role="UserScores">
+        <PropertyRef Name="PlayerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BMCDBContextStoreContainer">
+    <EntitySet Name="ChatMessages" EntityType="Self.ChatMessages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FriendRequest" EntityType="Self.FriendRequest" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PasswordResetRequests" EntityType="Self.PasswordResetRequests" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Player" EntityType="Self.Player" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Profile" EntityType="Self.Profile" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StatusPlayer" EntityType="Self.StatusPlayer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserScores" EntityType="Self.UserScores" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__ChatMessa__Recei__4AB81AF0" Association="Self.FK__ChatMessa__Recei__4AB81AF0">
+      <End Role="Player" EntitySet="Player" />
+      <End Role="ChatMessages" EntitySet="ChatMessages" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ChatMessa__Sende__49C3F6B7" Association="Self.FK__ChatMessa__Sende__49C3F6B7">
+      <End Role="Player" EntitySet="Player" />
+      <End Role="ChatMessages" EntitySet="ChatMessages" />
+    </AssociationSet>
+    <AssociationSet Name="FK__FriendReq__Recei__45F365D3" Association="Self.FK__FriendReq__Recei__45F365D3">
+      <End Role="Player" EntitySet="Player" />
+      <End Role="FriendRequest" EntitySet="FriendRequest" />
+    </AssociationSet>
+    <AssociationSet Name="FK__FriendReq__Sende__44FF419A" Association="Self.FK__FriendReq__Sende__44FF419A">
+      <End Role="Player" EntitySet="Player" />
+      <End Role="FriendRequest" EntitySet="FriendRequest" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PasswordR__Playe__4E88ABD4" Association="Self.FK__PasswordR__Playe__4E88ABD4">
+      <End Role="Player" EntitySet="Player" />
+      <End Role="PasswordResetRequests" EntitySet="PasswordResetRequests" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Profile__PlayerI__5441852A" Association="Self.FK__Profile__PlayerI__5441852A">
+      <End Role="Player" EntitySet="Player" />
+      <End Role="Profile" EntitySet="Profile" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Profile__StatusI__5535A963" Association="Self.FK__Profile__StatusI__5535A963">
+      <End Role="StatusPlayer" EntitySet="StatusPlayer" />
+      <End Role="Profile" EntitySet="Profile" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UserScore__Playe__412EB0B6" Association="Self.FK__UserScore__Playe__412EB0B6">
+      <End Role="Player" EntitySet="Player" />
+      <End Role="UserScores" EntitySet="UserScores" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

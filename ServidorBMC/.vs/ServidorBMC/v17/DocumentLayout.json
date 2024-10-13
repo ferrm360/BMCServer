@@ -1,0 +1,333 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\marla\\source\\repos\\BMCServer\\ServidorBMC\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A44FF50E-B21A-4683-81CD-D3F04DC58814}|DataAccessBMC\\DataAccessBMC\\DataAccessBMC.csproj|C:\\Users\\marla\\source\\repos\\BMCServer\\ServidorBMC\\dataaccessbmc\\dataaccessbmc\\bmccontext.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
+      "RelativeMoniker": "D:0:0:{A44FF50E-B21A-4683-81CD-D3F04DC58814}|DataAccessBMC\\DataAccessBMC\\DataAccessBMC.csproj|solutionrelative:dataaccessbmc\\dataaccessbmc\\bmccontext.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F2F9DEA1-96D2-4889-8398-5C9E5DAAC0E2}|ServiceBMC\\ServiceBMC.csproj|c:\\users\\marla\\source\\repos\\bmcserver\\servidorbmc\\servicebmc\\validators\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F2F9DEA1-96D2-4889-8398-5C9E5DAAC0E2}|ServiceBMC\\ServiceBMC.csproj|solutionrelative:servicebmc\\validators\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F2F9DEA1-96D2-4889-8398-5C9E5DAAC0E2}|ServiceBMC\\ServiceBMC.csproj|C:\\Users\\marla\\source\\repos\\BMCServer\\ServidorBMC\\servicebmc\\utilities\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F2F9DEA1-96D2-4889-8398-5C9E5DAAC0E2}|ServiceBMC\\ServiceBMC.csproj|solutionrelative:servicebmc\\utilities\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F2F9DEA1-96D2-4889-8398-5C9E5DAAC0E2}|ServiceBMC\\ServiceBMC.csproj|C:\\Users\\marla\\source\\repos\\BMCServer\\ServidorBMC\\servicebmc\\interfaces\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F2F9DEA1-96D2-4889-8398-5C9E5DAAC0E2}|ServiceBMC\\ServiceBMC.csproj|solutionrelative:servicebmc\\interfaces\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F2F9DEA1-96D2-4889-8398-5C9E5DAAC0E2}|ServiceBMC\\ServiceBMC.csproj|C:\\Users\\marla\\source\\repos\\BMCServer\\ServidorBMC\\servicebmc\\implementation\\class.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F2F9DEA1-96D2-4889-8398-5C9E5DAAC0E2}|ServiceBMC\\ServiceBMC.csproj|solutionrelative:servicebmc\\implementation\\class.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{759ED707-94ED-4226-BDE7-D0DDF8A4A1F4}|DataAccess.Tests\\DataAccessBMC.Tests.csproj|C:\\Users\\marla\\source\\repos\\BMCServer\\ServidorBMC\\dataaccess.tests\\repositories\\playerrepositorytest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{759ED707-94ED-4226-BDE7-D0DDF8A4A1F4}|DataAccess.Tests\\DataAccessBMC.Tests.csproj|solutionrelative:dataaccess.tests\\repositories\\playerrepositorytest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F2F9DEA1-96D2-4889-8398-5C9E5DAAC0E2}|ServiceBMC\\ServiceBMC.csproj|C:\\Users\\marla\\source\\repos\\BMCServer\\ServidorBMC\\servicebmc\\datacontracts\\playerstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F2F9DEA1-96D2-4889-8398-5C9E5DAAC0E2}|ServiceBMC\\ServiceBMC.csproj|solutionrelative:servicebmc\\datacontracts\\playerstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F2F9DEA1-96D2-4889-8398-5C9E5DAAC0E2}|ServiceBMC\\ServiceBMC.csproj|C:\\Users\\marla\\source\\repos\\BMCServer\\ServidorBMC\\servicebmc\\datacontracts\\userscores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F2F9DEA1-96D2-4889-8398-5C9E5DAAC0E2}|ServiceBMC\\ServiceBMC.csproj|solutionrelative:servicebmc\\datacontracts\\userscores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F2F9DEA1-96D2-4889-8398-5C9E5DAAC0E2}|ServiceBMC\\ServiceBMC.csproj|C:\\Users\\marla\\source\\repos\\BMCServer\\ServidorBMC\\servicebmc\\datacontracts\\profile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F2F9DEA1-96D2-4889-8398-5C9E5DAAC0E2}|ServiceBMC\\ServiceBMC.csproj|solutionrelative:servicebmc\\datacontracts\\profile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F2F9DEA1-96D2-4889-8398-5C9E5DAAC0E2}|ServiceBMC\\ServiceBMC.csproj|C:\\Users\\marla\\source\\repos\\BMCServer\\ServidorBMC\\servicebmc\\datacontracts\\friendrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F2F9DEA1-96D2-4889-8398-5C9E5DAAC0E2}|ServiceBMC\\ServiceBMC.csproj|solutionrelative:servicebmc\\datacontracts\\friendrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F2F9DEA1-96D2-4889-8398-5C9E5DAAC0E2}|ServiceBMC\\ServiceBMC.csproj|C:\\Users\\marla\\source\\repos\\BMCServer\\ServidorBMC\\servicebmc\\datacontracts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F2F9DEA1-96D2-4889-8398-5C9E5DAAC0E2}|ServiceBMC\\ServiceBMC.csproj|solutionrelative:servicebmc\\datacontracts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CFC5C65B-9E37-4F84-9848-44FCEA36582F}|HostBMC\\HostBMC.csproj|C:\\Users\\marla\\source\\repos\\BMCServer\\ServidorBMC\\hostbmc\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{CFC5C65B-9E37-4F84-9848-44FCEA36582F}|HostBMC\\HostBMC.csproj|solutionrelative:hostbmc\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CFC5C65B-9E37-4F84-9848-44FCEA36582F}|HostBMC\\HostBMC.csproj|C:\\Users\\marla\\source\\repos\\BMCServer\\ServidorBMC\\hostbmc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CFC5C65B-9E37-4F84-9848-44FCEA36582F}|HostBMC\\HostBMC.csproj|solutionrelative:hostbmc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F2F9DEA1-96D2-4889-8398-5C9E5DAAC0E2}|ServiceBMC\\ServiceBMC.csproj|C:\\Users\\marla\\source\\repos\\BMCServer\\ServidorBMC\\servicebmc\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F2F9DEA1-96D2-4889-8398-5C9E5DAAC0E2}|ServiceBMC\\ServiceBMC.csproj|solutionrelative:servicebmc\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{759ED707-94ED-4226-BDE7-D0DDF8A4A1F4}|DataAccess.Tests\\DataAccessBMC.Tests.csproj|C:\\Users\\marla\\source\\repos\\BMCServer\\ServidorBMC\\dataaccess.tests\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{759ED707-94ED-4226-BDE7-D0DDF8A4A1F4}|DataAccess.Tests\\DataAccessBMC.Tests.csproj|solutionrelative:dataaccess.tests\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A44FF50E-B21A-4683-81CD-D3F04DC58814}|DataAccessBMC\\DataAccessBMC\\DataAccessBMC.csproj|C:\\Users\\marla\\source\\repos\\BMCServer\\ServidorBMC\\dataaccessbmc\\dataaccessbmc\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A44FF50E-B21A-4683-81CD-D3F04DC58814}|DataAccessBMC\\DataAccessBMC\\DataAccessBMC.csproj|solutionrelative:dataaccessbmc\\dataaccessbmc\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A44FF50E-B21A-4683-81CD-D3F04DC58814}|DataAccessBMC\\DataAccessBMC\\DataAccessBMC.csproj|C:\\Users\\marla\\source\\repos\\BMCServer\\ServidorBMC\\dataaccessbmc\\dataaccessbmc\\repositories\\implementations\\playerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A44FF50E-B21A-4683-81CD-D3F04DC58814}|DataAccessBMC\\DataAccessBMC\\DataAccessBMC.csproj|solutionrelative:dataaccessbmc\\dataaccessbmc\\repositories\\implementations\\playerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A44FF50E-B21A-4683-81CD-D3F04DC58814}|DataAccessBMC\\DataAccessBMC\\DataAccessBMC.csproj|C:\\Users\\marla\\source\\repos\\BMCServer\\ServidorBMC\\dataaccessbmc\\dataaccessbmc\\repositories\\implementations\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A44FF50E-B21A-4683-81CD-D3F04DC58814}|DataAccessBMC\\DataAccessBMC\\DataAccessBMC.csproj|solutionrelative:dataaccessbmc\\dataaccessbmc\\repositories\\implementations\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A44FF50E-B21A-4683-81CD-D3F04DC58814}|DataAccessBMC\\DataAccessBMC\\DataAccessBMC.csproj|C:\\Users\\marla\\source\\repos\\BMCServer\\ServidorBMC\\dataaccessbmc\\dataaccessbmc\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A44FF50E-B21A-4683-81CD-D3F04DC58814}|DataAccessBMC\\DataAccessBMC\\DataAccessBMC.csproj|solutionrelative:dataaccessbmc\\dataaccessbmc\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 10,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\Users\\marla\\source\\repos\\BMCServer\\ServidorBMC\\ServiceBMC\\Validators\\Class1.cs",
+              "RelativeDocumentMoniker": "ServiceBMC\\Validators\\Class1.cs",
+              "ToolTip": "C:\\Users\\marla\\source\\repos\\BMCServer\\ServidorBMC\\ServiceBMC\\Validators\\Class1.cs",
+              "RelativeToolTip": "ServiceBMC\\Validators\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-11T17:38:57.347Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\Users\\marla\\source\\repos\\BMCServer\\ServidorBMC\\ServiceBMC\\Utilities\\Class1.cs",
+              "RelativeDocumentMoniker": "ServiceBMC\\Utilities\\Class1.cs",
+              "ToolTip": "C:\\Users\\marla\\source\\repos\\BMCServer\\ServidorBMC\\ServiceBMC\\Utilities\\Class1.cs",
+              "RelativeToolTip": "ServiceBMC\\Utilities\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-11T17:38:46.809Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\Users\\marla\\source\\repos\\BMCServer\\ServidorBMC\\ServiceBMC\\Interfaces\\Class1.cs",
+              "RelativeDocumentMoniker": "ServiceBMC\\Interfaces\\Class1.cs",
+              "ToolTip": "C:\\Users\\marla\\source\\repos\\BMCServer\\ServidorBMC\\ServiceBMC\\Interfaces\\Class1.cs",
+              "RelativeToolTip": "ServiceBMC\\Interfaces\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-11T17:38:36.996Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Class.cs",
+              "DocumentMoniker": "C:\\Users\\marla\\source\\repos\\BMCServer\\ServidorBMC\\ServiceBMC\\Implementation\\Class.cs",
+              "RelativeDocumentMoniker": "ServiceBMC\\Implementation\\Class.cs",
+              "ToolTip": "C:\\Users\\marla\\source\\repos\\BMCServer\\ServidorBMC\\ServiceBMC\\Implementation\\Class.cs",
+              "RelativeToolTip": "ServiceBMC\\Implementation\\Class.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-11T17:38:28.557Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "PlayerStatus.cs",
+              "DocumentMoniker": "C:\\Users\\marla\\source\\repos\\BMCServer\\ServidorBMC\\ServiceBMC\\DataContracts\\PlayerStatus.cs",
+              "RelativeDocumentMoniker": "ServiceBMC\\DataContracts\\PlayerStatus.cs",
+              "ToolTip": "C:\\Users\\marla\\source\\repos\\BMCServer\\ServidorBMC\\ServiceBMC\\DataContracts\\PlayerStatus.cs",
+              "RelativeToolTip": "ServiceBMC\\DataContracts\\PlayerStatus.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-10T15:34:31.52Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Profile.cs",
+              "DocumentMoniker": "C:\\Users\\marla\\source\\repos\\BMCServer\\ServidorBMC\\ServiceBMC\\DataContracts\\Profile.cs",
+              "RelativeDocumentMoniker": "ServiceBMC\\DataContracts\\Profile.cs",
+              "ToolTip": "C:\\Users\\marla\\source\\repos\\BMCServer\\ServidorBMC\\ServiceBMC\\DataContracts\\Profile.cs",
+              "RelativeToolTip": "ServiceBMC\\DataContracts\\Profile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-10T15:32:53.347Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "FriendRequest.cs",
+              "DocumentMoniker": "C:\\Users\\marla\\source\\repos\\BMCServer\\ServidorBMC\\ServiceBMC\\DataContracts\\FriendRequest.cs",
+              "RelativeDocumentMoniker": "ServiceBMC\\DataContracts\\FriendRequest.cs",
+              "ToolTip": "C:\\Users\\marla\\source\\repos\\BMCServer\\ServidorBMC\\ServiceBMC\\DataContracts\\FriendRequest.cs",
+              "RelativeToolTip": "ServiceBMC\\DataContracts\\FriendRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-10T15:32:37.507Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Player.cs",
+              "DocumentMoniker": "C:\\Users\\marla\\source\\repos\\BMCServer\\ServidorBMC\\ServiceBMC\\DataContracts\\Player.cs",
+              "RelativeDocumentMoniker": "ServiceBMC\\DataContracts\\Player.cs",
+              "ToolTip": "C:\\Users\\marla\\source\\repos\\BMCServer\\ServidorBMC\\ServiceBMC\\DataContracts\\Player.cs",
+              "RelativeToolTip": "ServiceBMC\\DataContracts\\Player.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-10T14:36:17.751Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BMCContext.edmx [Diagram1]",
+              "DocumentMoniker": "C:\\Users\\marla\\source\\repos\\BMCServer\\ServidorBMC\\DataAccessBMC\\DataAccessBMC\\BMCContext.edmx",
+              "RelativeDocumentMoniker": "DataAccessBMC\\DataAccessBMC\\BMCContext.edmx",
+              "ToolTip": "C:\\Users\\marla\\source\\repos\\BMCServer\\ServidorBMC\\DataAccessBMC\\DataAccessBMC\\BMCContext.edmx [Diagram1]",
+              "RelativeToolTip": "DataAccessBMC\\DataAccessBMC\\BMCContext.edmx [Diagram1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
+              "WhenOpened": "2024-10-10T14:36:35.362Z",
+              "EditorCaption": " [Diagram1]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "App.config",
+              "DocumentMoniker": "C:\\Users\\marla\\source\\repos\\BMCServer\\ServidorBMC\\HostBMC\\App.config",
+              "RelativeDocumentMoniker": "HostBMC\\App.config",
+              "ToolTip": "C:\\Users\\marla\\source\\repos\\BMCServer\\ServidorBMC\\HostBMC\\App.config",
+              "RelativeToolTip": "HostBMC\\App.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-10-10T13:36:08.798Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\marla\\source\\repos\\BMCServer\\ServidorBMC\\HostBMC\\Program.cs",
+              "RelativeDocumentMoniker": "HostBMC\\Program.cs",
+              "ToolTip": "C:\\Users\\marla\\source\\repos\\BMCServer\\ServidorBMC\\HostBMC\\Program.cs",
+              "RelativeToolTip": "HostBMC\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-10T13:35:30.726Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\Users\\marla\\source\\repos\\BMCServer\\ServidorBMC\\ServiceBMC\\Class1.cs",
+              "RelativeDocumentMoniker": "ServiceBMC\\Class1.cs",
+              "ToolTip": "C:\\Users\\marla\\source\\repos\\BMCServer\\ServidorBMC\\ServiceBMC\\Class1.cs",
+              "RelativeToolTip": "ServiceBMC\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-10T13:34:09.361Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PlayerRepositoryTest.cs",
+              "DocumentMoniker": "C:\\Users\\marla\\source\\repos\\BMCServer\\ServidorBMC\\DataAccess.Tests\\Repositories\\PlayerRepositoryTest.cs",
+              "RelativeDocumentMoniker": "DataAccess.Tests\\Repositories\\PlayerRepositoryTest.cs",
+              "ToolTip": "C:\\Users\\marla\\source\\repos\\BMCServer\\ServidorBMC\\DataAccess.Tests\\Repositories\\PlayerRepositoryTest.cs",
+              "RelativeToolTip": "DataAccess.Tests\\Repositories\\PlayerRepositoryTest.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAABsAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-07T15:37:27.941Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UserScores.cs",
+              "DocumentMoniker": "C:\\Users\\marla\\source\\repos\\BMCServer\\ServidorBMC\\ServiceBMC\\DataContracts\\UserScores.cs",
+              "RelativeDocumentMoniker": "ServiceBMC\\DataContracts\\UserScores.cs",
+              "ToolTip": "C:\\Users\\marla\\source\\repos\\BMCServer\\ServidorBMC\\ServiceBMC\\DataContracts\\UserScores.cs",
+              "RelativeToolTip": "ServiceBMC\\DataContracts\\UserScores.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-10T15:34:02.858Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "App.config",
+              "DocumentMoniker": "C:\\Users\\marla\\source\\repos\\BMCServer\\ServidorBMC\\DataAccess.Tests\\App.config",
+              "RelativeDocumentMoniker": "DataAccess.Tests\\App.config",
+              "ToolTip": "C:\\Users\\marla\\source\\repos\\BMCServer\\ServidorBMC\\DataAccess.Tests\\App.config",
+              "RelativeToolTip": "DataAccess.Tests\\App.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAADyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-10-08T16:47:18.779Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "App.Config",
+              "DocumentMoniker": "C:\\Users\\marla\\source\\repos\\BMCServer\\ServidorBMC\\DataAccessBMC\\DataAccessBMC\\App.Config",
+              "RelativeDocumentMoniker": "DataAccessBMC\\DataAccessBMC\\App.Config",
+              "ToolTip": "C:\\Users\\marla\\source\\repos\\BMCServer\\ServidorBMC\\DataAccessBMC\\DataAccessBMC\\App.Config",
+              "RelativeToolTip": "DataAccessBMC\\DataAccessBMC\\App.Config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-10-08T16:41:53.922Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "PlayerRepository.cs",
+              "DocumentMoniker": "C:\\Users\\marla\\source\\repos\\BMCServer\\ServidorBMC\\DataAccessBMC\\DataAccessBMC\\Repositories\\Implementations\\PlayerRepository.cs",
+              "RelativeDocumentMoniker": "DataAccessBMC\\DataAccessBMC\\Repositories\\Implementations\\PlayerRepository.cs",
+              "ToolTip": "C:\\Users\\marla\\source\\repos\\BMCServer\\ServidorBMC\\DataAccessBMC\\DataAccessBMC\\Repositories\\Implementations\\PlayerRepository.cs",
+              "RelativeToolTip": "DataAccessBMC\\DataAccessBMC\\Repositories\\Implementations\\PlayerRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-08T16:32:07.501Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "GenericRepository.cs",
+              "DocumentMoniker": "C:\\Users\\marla\\source\\repos\\BMCServer\\ServidorBMC\\DataAccessBMC\\DataAccessBMC\\Repositories\\Implementations\\GenericRepository.cs",
+              "RelativeDocumentMoniker": "DataAccessBMC\\DataAccessBMC\\Repositories\\Implementations\\GenericRepository.cs",
+              "ToolTip": "C:\\Users\\marla\\source\\repos\\BMCServer\\ServidorBMC\\DataAccessBMC\\DataAccessBMC\\Repositories\\Implementations\\GenericRepository.cs",
+              "RelativeToolTip": "DataAccessBMC\\DataAccessBMC\\Repositories\\Implementations\\GenericRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-08T16:32:03.617Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\Users\\marla\\source\\repos\\BMCServer\\ServidorBMC\\DataAccessBMC\\DataAccessBMC\\Class1.cs",
+              "RelativeDocumentMoniker": "DataAccessBMC\\DataAccessBMC\\Class1.cs",
+              "ToolTip": "C:\\Users\\marla\\source\\repos\\BMCServer\\ServidorBMC\\DataAccessBMC\\DataAccessBMC\\Class1.cs",
+              "RelativeToolTip": "DataAccessBMC\\DataAccessBMC\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-07T15:38:25.764Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

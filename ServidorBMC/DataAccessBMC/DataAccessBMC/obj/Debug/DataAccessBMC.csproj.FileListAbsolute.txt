@@ -1,0 +1,12 @@
+C:\Users\marla\Source\Repos\BMCServer\ServidorBMC\DataAccessBMC\DataAccessBMC\bin\Debug\DataAccessBMC.dll.config
+C:\Users\marla\Source\Repos\BMCServer\ServidorBMC\DataAccessBMC\DataAccessBMC\bin\Debug\DataAccessBMC.dll
+C:\Users\marla\Source\Repos\BMCServer\ServidorBMC\DataAccessBMC\DataAccessBMC\bin\Debug\DataAccessBMC.pdb
+C:\Users\marla\Source\Repos\BMCServer\ServidorBMC\DataAccessBMC\DataAccessBMC\bin\Debug\EntityFramework.dll
+C:\Users\marla\Source\Repos\BMCServer\ServidorBMC\DataAccessBMC\DataAccessBMC\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\marla\Source\Repos\BMCServer\ServidorBMC\DataAccessBMC\DataAccessBMC\bin\Debug\EntityFramework.xml
+C:\Users\marla\Source\Repos\BMCServer\ServidorBMC\DataAccessBMC\DataAccessBMC\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\marla\Source\Repos\BMCServer\ServidorBMC\DataAccessBMC\DataAccessBMC\obj\Debug\DataAccessBMC.csproj.AssemblyReference.cache
+C:\Users\marla\Source\Repos\BMCServer\ServidorBMC\DataAccessBMC\DataAccessBMC\obj\Debug\DataAccessBMC.csproj.CoreCompileInputs.cache
+C:\Users\marla\Source\Repos\BMCServer\ServidorBMC\DataAccessBMC\DataAccessBMC\obj\Debug\DataAcce.43DA1600.Up2Date
+C:\Users\marla\Source\Repos\BMCServer\ServidorBMC\DataAccessBMC\DataAccessBMC\obj\Debug\DataAccessBMC.dll
+C:\Users\marla\Source\Repos\BMCServer\ServidorBMC\DataAccessBMC\DataAccessBMC\obj\Debug\DataAccessBMC.pdb

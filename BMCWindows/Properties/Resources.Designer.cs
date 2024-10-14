@@ -106,6 +106,15 @@ namespace BMCWindows.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to There are empty fields, check them .
+        /// </summary>
+        public static string MessageBoxEmptyFields {
+            get {
+                return ResourceManager.GetString("MessageBoxEmptyFields", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sign Up.
         /// </summary>
         public static string SignUpButtonSignUp {

@@ -107,7 +107,7 @@
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="7*"/>
             </Grid.RowDefinitions>
-            <Button x:Name="ButtonGoBack" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Margin="0,5,0,0" Background="Transparent" BorderBrush="Transparent" />
+            <Button x:Name="ButtonGoBack" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Margin="0,5,0,0" Background="Transparent" BorderBrush="Transparent" Click="Cancel"/>
             <Grid>
                 <Image Source="/Images/BrownButton.png" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,5,0,0"/>
                 <TextBlock Text="{x:Static p:Resources.GloblalButtonCancel}" HorizontalAlignment="Center" VerticalAlignment="Center"  Foreground="Black" Height="20" FontFamily="Press Start 2P Normal" FontSize="9" Grid.Row="3" Grid.Column="1"/>

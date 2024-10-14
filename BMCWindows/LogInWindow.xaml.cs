@@ -1,4 +1,5 @@
-﻿using BMCWindows.Validators;
+﻿using BMCWindows.Patterns.Singleton;
+using BMCWindows.Validators;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,7 +44,12 @@ namespace BMCWindows
                 var result = proxy.Login(user, password);
                 if (result.Success)
                 {
+                    Server.PlayerDTO player = new Server.PlayerDTO();
+                    player.Username = user;
+                    player.Password = password;
+                    UserSessionManager.getInstance().loginPlayer(player);
                     this.NavigationService.Navigate(new HomePage());
+
                 }
                 else 
                 {

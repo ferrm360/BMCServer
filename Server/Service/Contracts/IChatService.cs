@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Service.DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel;
@@ -23,7 +24,8 @@ namespace Service.Contracts
     [ServiceContract]
     public interface IChatServiceCallback
     {
-        [OperationContract]
+        [OperationContract(IsOneWay = true)]
         void ReceiveMessage(string message);
     }
 }
+    

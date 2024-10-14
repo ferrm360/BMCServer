@@ -47,6 +47,7 @@
     <Compile Include="Contracts\IAccountService.cs" />
     <Compile Include="Contracts\IChatService.cs" />
     <Compile Include="Contracts\IUserConnectionManager.cs" />
+    <Compile Include="DTO\MessageDTO.cs" />
     <Compile Include="DTO\PlayerDTO.cs" />
     <Compile Include="Factories\AccountServiceFactory.cs" />
     <Compile Include="Implements\AccountService.cs" />

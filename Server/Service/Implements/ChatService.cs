@@ -5,6 +5,7 @@ using System.Linq;
 using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
+using Service.DTO;
 
 namespace Service.Implements
 {
@@ -13,6 +14,7 @@ namespace Service.Implements
     public class ChatService : IChatService
     {
         private readonly Dictionary<string, IChatServiceCallback> _connectedUsers = new Dictionary<string, IChatServiceCallback>();
+        MessageDTO messageDTO = new MessageDTO();
 
         public void RegisterUser(string username)
         {
@@ -52,6 +54,9 @@ namespace Service.Implements
                 }
             }
         }
+
+
+
     }
 }
 

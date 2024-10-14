@@ -132,6 +132,9 @@
   <data name="LoginLaberlPassword" xml:space="preserve">
     <value>Password</value>
   </data>
+  <data name="MessageBoxEmptyFields" xml:space="preserve">
+    <value>There are empty fields, check them </value>
+  </data>
   <data name="SignUpButtonSignUp" xml:space="preserve">
     <value>Sign Up</value>
   </data>

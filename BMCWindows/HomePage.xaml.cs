@@ -1,7 +1,9 @@
-﻿using System;
+﻿using BMCWindows.Patterns.Singleton;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -19,7 +21,7 @@ namespace BMCWindows
     /// <summary>
     /// Interaction logic for HomePage.xaml
     /// </summary>
-    public partial class HomePage : Page
+    public partial class HomePage : Page, ChatServer.IChatServiceCallback
     {
         public ObservableCollection<Friend> Friends { get; set; }
         public ObservableCollection<Message> Messages { get; set; }
@@ -28,6 +30,11 @@ namespace BMCWindows
         public HomePage()
         {
             InitializeComponent();
+            Server.PlayerDTO player = new Server.PlayerDTO();
+            player = UserSessionManager.getInstance().getPlayerUserData();
+            InstanceContext context = new InstanceContext(this);
+            ChatServer.ChatServiceClient proxy = new ChatServer.ChatServiceClient(context);
+            proxy.RegisterUser(player.Username);
             LoadRecentMessages();
 
             Friends = new ObservableCollection<Friend>
@@ -78,16 +85,12 @@ namespace BMCWindows
 
         private void SendMessage_Click(object sender, RoutedEventArgs e)
         {
+            InstanceContext context = new InstanceContext(this);
+            ChatServer.ChatServiceClient proxy = new ChatServer.ChatServiceClient(context);
+
             if (!string.IsNullOrEmpty(MessageTextBox.Text))
             {
-                Messages.Add(new Message
-                {
-                    Sender = "Yo",
-                    Messages = MessageTextBox.Text,
-                    TimeSent = DateTime.Now
-                });
-
-                MessageTextBox.Clear();
+                proxy.SendMessage("", MessageTextBox.Text);   
             }
         }
 
@@ -106,9 +109,14 @@ namespace BMCWindows
 
         private void SendGeneralMessage_Click(object sender, RoutedEventArgs e)
         {
+
+            Server.PlayerDTO player = new Server.PlayerDTO();
+            player = UserSessionManager.getInstance().getPlayerUserData();
+
             if (!string.IsNullOrEmpty(textboxGeneralChat.Text))
             {
-                chatService.AddMessage("Yo", textboxGeneralChat.Text);
+
+                chatService.AddMessage(player.Username, textboxGeneralChat.Text);
                 textboxGeneralChat.Clear();
 
                 // Actualizar los mensajes mostrados en la interfaz
@@ -116,6 +124,10 @@ namespace BMCWindows
             }
         }
 
+        public void ReceiveMessage(string message)
+        {
+            generalMessages.ItemsSource += message;
+        }
     }
 
     public class Friend

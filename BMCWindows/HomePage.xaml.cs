@@ -23,18 +23,25 @@ namespace BMCWindows
     /// </summary>
     public partial class HomePage : Page, ChatServer.IChatServiceCallback
     {
+
+       
         public ObservableCollection<Friend> Friends { get; set; }
         public ObservableCollection<Message> Messages { get; set; }
         public ChatService chatService = new ChatService();
 
+
+
         public HomePage()
         {
             InitializeComponent();
+            Messages = new ObservableCollection<Message>();
+            generalMessages.ItemsSource = Messages; // Enlazamos solo una vez aquí
+            //generalMessages.ItemsSource = Messages; 
             Server.PlayerDTO player = new Server.PlayerDTO();
             player = UserSessionManager.getInstance().getPlayerUserData();
             InstanceContext context = new InstanceContext(this);
             ChatServer.ChatServiceClient proxy = new ChatServer.ChatServiceClient(context);
-            proxy.RegisterUser(player.Username);
+            //proxy.RegisterUser(player.Username);
             LoadRecentMessages();
 
             Friends = new ObservableCollection<Friend>
@@ -103,7 +110,7 @@ namespace BMCWindows
         private void LoadRecentMessages()
         {
             generalMessages.ItemsSource = null;  // Limpiar la fuente de datos
-            var recentMessages = chatService.GetRecentMessages();
+            var recentMessages = Messages;
             generalMessages.ItemsSource = recentMessages;
         }
 
@@ -115,18 +122,27 @@ namespace BMCWindows
 
             if (!string.IsNullOrEmpty(textboxGeneralChat.Text))
             {
-
-                chatService.AddMessage(player.Username, textboxGeneralChat.Text);
+                InstanceContext context = new InstanceContext(this);
+                ChatServer.ChatServiceClient proxy = new ChatServer.ChatServiceClient(context);
+                proxy.SendMessage(player.Username, textboxGeneralChat.Text);
+                ReceiveMessage(textboxGeneralChat.Text);
                 textboxGeneralChat.Clear();
-
-                // Actualizar los mensajes mostrados en la interfaz
                 LoadRecentMessages();
+                // Actualizar los mensajes mostrados en la interfaz
             }
         }
 
         public void ReceiveMessage(string message)
         {
-            generalMessages.ItemsSource += message;
+            Server.PlayerDTO player = UserSessionManager.getInstance().getPlayerUserData();
+
+            // Asegúrate de que la colección está siendo modificada en el hilo principal
+            Application.Current.Dispatcher.Invoke(() =>
+            {
+                Messages.Add(new Message { Sender = player.Username, Messages = message });
+                MessageBox.Show("Mensaje recibido: " + message);
+            });
+
         }
     }
 
@@ -135,10 +151,5 @@ namespace BMCWindows
         public string Name { get; set; }
     }
 
-    public class Message
-    {
-        public string Sender { get; set; }
-        public string Messages { get; set; }
-        public DateTime TimeSent { get; set; }
-    }
+    
 }

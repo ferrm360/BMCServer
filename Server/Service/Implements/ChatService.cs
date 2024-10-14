@@ -14,7 +14,6 @@ namespace Service.Implements
     public class ChatService : IChatService
     {
         private readonly Dictionary<string, IChatServiceCallback> _connectedUsers = new Dictionary<string, IChatServiceCallback>();
-        MessageDTO messageDTO = new MessageDTO();
 
         public void RegisterUser(string username)
         {

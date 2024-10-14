@@ -138,7 +138,6 @@
                         <StackPanel Orientation="Vertical">
                             <TextBlock Text="{Binding Sender}" FontWeight="Bold"/>
                             <TextBlock Text="{Binding Messages}" TextWrapping="Wrap"/>
-                            <TextBlock Text="{Binding TimeSent}" FontStyle="Italic" FontSize="10" HorizontalAlignment="Right"/>
                         </StackPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -97,5 +98,16 @@ namespace BMCWindows
             }
         }
 
-    
+
+    public class Message
+    {
+        
+        public string Sender { get; set; }
+        
+        public string Messages { get; set; }
+
+        public DateTime TimeSent { get; set; }
+    }
+
+
 }

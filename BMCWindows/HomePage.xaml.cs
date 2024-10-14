@@ -28,6 +28,7 @@ namespace BMCWindows
         public ObservableCollection<Friend> Friends { get; set; }
         public ObservableCollection<Message> Messages { get; set; }
         public ChatService chatService = new ChatService();
+        public ChatServer.ChatServiceClient proxy;
 
 
 
@@ -40,9 +41,9 @@ namespace BMCWindows
             Server.PlayerDTO player = new Server.PlayerDTO();
             player = UserSessionManager.getInstance().getPlayerUserData();
             InstanceContext context = new InstanceContext(this);
-            ChatServer.ChatServiceClient proxy = new ChatServer.ChatServiceClient(context);
-            //proxy.RegisterUser(player.Username);
-            LoadRecentMessages();
+            proxy = new ChatServer.ChatServiceClient(context);
+            proxy.RegisterUser(player.Username);
+            
 
             Friends = new ObservableCollection<Friend>
 
@@ -92,8 +93,7 @@ namespace BMCWindows
 
         private void SendMessage_Click(object sender, RoutedEventArgs e)
         {
-            InstanceContext context = new InstanceContext(this);
-            ChatServer.ChatServiceClient proxy = new ChatServer.ChatServiceClient(context);
+            
 
             if (!string.IsNullOrEmpty(MessageTextBox.Text))
             {
@@ -107,12 +107,7 @@ namespace BMCWindows
             Chat.Visibility = Visibility.Visible;
         }
 
-        private void LoadRecentMessages()
-        {
-            generalMessages.ItemsSource = null;  // Limpiar la fuente de datos
-            var recentMessages = Messages;
-            generalMessages.ItemsSource = recentMessages;
-        }
+       
 
         private void SendGeneralMessage_Click(object sender, RoutedEventArgs e)
         {
@@ -122,12 +117,10 @@ namespace BMCWindows
 
             if (!string.IsNullOrEmpty(textboxGeneralChat.Text))
             {
-                InstanceContext context = new InstanceContext(this);
-                ChatServer.ChatServiceClient proxy = new ChatServer.ChatServiceClient(context);
                 proxy.SendMessage(player.Username, textboxGeneralChat.Text);
                 ReceiveMessage(textboxGeneralChat.Text);
                 textboxGeneralChat.Clear();
-                LoadRecentMessages();
+                //LoadRecentMessages();
                 // Actualizar los mensajes mostrados en la interfaz
             }
         }
@@ -140,7 +133,6 @@ namespace BMCWindows
             Application.Current.Dispatcher.Invoke(() =>
             {
                 Messages.Add(new Message { Sender = player.Username, Messages = message });
-                MessageBox.Show("Mensaje recibido: " + message);
             });
 
         }

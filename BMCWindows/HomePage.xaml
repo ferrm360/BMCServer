@@ -8,7 +8,8 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="HomePage"
-      Background="#FEFFDB">
+      Background="#FEFFDB"
+      >
     <Grid>
         <Grid>
             <Grid.RowDefinitions>
@@ -69,7 +70,7 @@
                     <TextBox x:Name="textBoxSearchFriendsChats" Margin="5" />
 
                     <!-- List of Friends -->
-                    <ListBox x:Name="Chat" Margin="5" SelectionChanged="FriendsList_SelectionChanged">
+                    <ListBox x:Name="Chat" Margin="5" >
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <Border Background="#DDD" CornerRadius="5" Margin="5">
@@ -114,9 +115,9 @@
             <!-- Message Input -->
             <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="10,10,10,10" Grid.ColumnSpan="2" HorizontalAlignment="Right">
                 <TextBox x:Name="MessageTextBox" Width="200" Margin="0,0,5,0"/>
-                <Button Content="Enviar" Click="SendMessage_Click"/>
+                <Button Content="Enviar" />
             </StackPanel>
-            <Button Content="{x:Static p:Resources.GloblalButtonCancel}" Click="BackToFriends_Click" Grid.Column="1" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,15,20,0"/>
+            <Button Content="{x:Static p:Resources.GloblalButtonCancel}"  Grid.Column="1" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,15,20,0"/>
 
         </Grid>
 

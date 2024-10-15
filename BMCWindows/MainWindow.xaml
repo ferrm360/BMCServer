@@ -10,7 +10,8 @@
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
-        KeyDown="MinimizeWindow">
+        KeyDown="MinimizeWindow"
+        Closing="CloseWindow">
     <Grid>
     <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"/>
     </Grid>

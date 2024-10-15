@@ -9,8 +9,8 @@ using Service.DTO;
 
 namespace Service.Implements
 {
-    //[ServiceBehavior(InstanceContextMode = InstanceContextMode.Single)]
-    [ServiceBehavior(ConcurrencyMode = ConcurrencyMode.Reentrant)]
+    [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single)]
+    //[ServiceBehavior(ConcurrencyMode = ConcurrencyMode.Reentrant)]
     public class ChatService : IChatService
     {
         private readonly Dictionary<string, IChatServiceCallback> _connectedUsers = new Dictionary<string, IChatServiceCallback>();
@@ -24,6 +24,9 @@ namespace Service.Implements
                 _connectedUsers.Add(username, callback);
 
                 SendMessage("System", $"{username} has joined the chat.");
+                IContextChannel contextChannel = (IContextChannel)callback;
+                contextChannel.Closed += (sender, args) => DisconnectUser(username);
+                contextChannel.Faulted += (sender, args) => DisconnectUser(username);
             }
         }
 

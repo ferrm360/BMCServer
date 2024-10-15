@@ -37,6 +37,11 @@ namespace BMCWindows
             }
         }
 
+        private void CloseWindow(Object sender, EventArgs e)
+        { 
+        }
+
+
         
     }
 }

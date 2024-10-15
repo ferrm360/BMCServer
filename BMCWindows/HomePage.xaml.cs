@@ -55,57 +55,10 @@ namespace BMCWindows
         };
             FriendsList.ItemsSource = Friends;
             Chat.ItemsSource = Friends;
-            textBoxSearchFriends.TextChanged += SearchFriends;
-            textBoxSearchFriendsChats.TextChanged += SearchFriendsChat;
-        }
-
-        private void SearchFriends(object sender, TextChangedEventArgs e)
-        {
-            var filtered = Friends.Where(f => f.Name.ToLower().Contains(textBoxSearchFriends.Text.ToLower())).ToList();
-            FriendsList.ItemsSource = filtered;
-        }
-
-        private void SearchFriendsChat(object sender, TextChangedEventArgs e)
-        {
-            var filtered = Friends.Where(f => f.Name.ToLower().Contains(textBoxSearchFriendsChats.Text.ToLower())).ToList();
-            Chat.ItemsSource = filtered;
-
-        }
-
-        private void FriendsList_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (Chat.SelectedItem != null)
-            {
-                // Oculta la lista de amigos y muestra el chat
-                Chat.Visibility = Visibility.Collapsed;
-                ChatGrid.Visibility = Visibility.Visible;
-
-                // Carga los mensajes de ejemplo
-                Messages = new ObservableCollection<Message>
-            {
-                new Message { Sender = "Yo", Messages = "Hola!", TimeSent = DateTime.Now.AddMinutes(-10) },
-                new Message { Sender = ((Friend)Chat.SelectedItem).Name, Messages = "Hola, ¿cómo estás?", TimeSent = DateTime.Now.AddMinutes(-9) }
-            };
-
-                MessagesList.ItemsSource = Messages;
-            }
-        }
-
-        private void SendMessage_Click(object sender, RoutedEventArgs e)
-        {
             
-
-            if (!string.IsNullOrEmpty(MessageTextBox.Text))
-            {
-                proxy.SendMessage("", MessageTextBox.Text);   
-            }
         }
 
-        private void BackToFriends_Click(object sender, RoutedEventArgs e)
-        {
-            ChatGrid.Visibility = Visibility.Collapsed;
-            Chat.Visibility = Visibility.Visible;
-        }
+       
 
        
 

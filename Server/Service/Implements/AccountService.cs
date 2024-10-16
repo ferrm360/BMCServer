@@ -91,5 +91,9 @@ namespace Service.Implements
             }
         }
 
+        public bool UpdatePassword(string username, string currentPassword, string newPassword)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

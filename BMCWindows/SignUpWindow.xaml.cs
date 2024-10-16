@@ -56,6 +56,14 @@ namespace BMCWindows
             
         }
 
+        private void HidePassword(object sender, System.Windows.Input.TextCompositionEventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+            textBox.Text += "*";
+            e.Handled = true;
+
+        }
+
 
         private void Cancel(object sender, RoutedEventArgs e) 
         {

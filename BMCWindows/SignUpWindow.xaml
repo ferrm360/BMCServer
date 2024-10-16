@@ -19,30 +19,22 @@
             <Grid>
 
                 <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                    <!-- Definimos un Grid 3x3 con tamaños proporcionales para que se ajuste al tamaño de la pantalla -->
                     <Grid.RowDefinitions>
                         <RowDefinition Height="80*" />
-                        <!-- Fila superior -->
                         <RowDefinition Height="60*"/>
                         <RowDefinition Height="60*" />
                         <RowDefinition Height="60*"/>
                         <RowDefinition Height="60*"/>
-                        <!-- Fila central (se ajusta al contenido de la imagen) -->
                         <RowDefinition Height="63*" />
                         <RowDefinition Height="11*"/>
-                        <!-- Fila inferior -->
                     </Grid.RowDefinitions>
 
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
-                        <!-- Columna izquierda -->
                         <ColumnDefinition Width="*" />
-                        <!-- Columna central (se ajusta al contenido de la imagen) -->
                         <ColumnDefinition Width="*" />
-                        <!-- Columna derecha -->
                     </Grid.ColumnDefinitions>
 
-                    <!-- Imagen que se ajusta a la celda central del Grid -->
                     <Image Source="Images/LongTextbox.png" Stretch="Uniform" Grid.Column="1" Grid.Row="1" Margin="0,5,0,0"/>
                     <Image Source="Images/LogoBMC.png" Grid.Column="1" Grid.Row="0" Margin="1,20,0,0"/>
                     <Label Content="{x:Static p:Resources.LoginLabelUser}" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" FontFamily="Press Start 2P Regular" Foreground="#43224D" Height="22" Grid.Row="1" Width="58"/>
@@ -68,7 +60,6 @@
 
 
 
-                <!-- TextBox con tamaño fijo, centrado -->
             </Grid>
 
             <Grid>
@@ -89,10 +80,10 @@
                     <RowDefinition Height="27*"/>
                     <RowDefinition Height="89*"/>
                 </Grid.RowDefinitions>
-                <TextBox x:Name="textBoxUser" Grid.Row="1" Grid.Column="1"  Background="Transparent" BorderBrush="Transparent"/>
-                <TextBox x:Name="textBoxEmail" Grid.Column="1" Grid.Row="3"  Background="Transparent" BorderBrush="Transparent"/>
-                <TextBox x:Name="textBoxPassword" Grid.Column="1" Grid.Row="5" Background="Transparent" BorderBrush="Transparent"/>
-                <TextBox x:Name="textBoxConfirmPassword" Grid.Column="1" Grid.Row="7" Background="Transparent" BorderBrush="Transparent"/>
+                <TextBox x:Name="textBoxUser" Grid.Row="1" Grid.Column="1"  Background="Transparent" BorderBrush="Transparent" TextAlignment="Center" />
+                <TextBox x:Name="textBoxEmail" Grid.Column="1" Grid.Row="3"  Background="Transparent" BorderBrush="Transparent" TextAlignment="Center"/>
+                <TextBox x:Name="textBoxPassword" Grid.Column="1" Grid.Row="5" Background="Transparent" BorderBrush="Transparent" PreviewTextInput="HidePassword" TextAlignment="Center"/>
+                <TextBox x:Name="textBoxConfirmPassword" Grid.Column="1" Grid.Row="7" Background="Transparent" BorderBrush="Transparent" PreviewTextInput="HidePassword" TextAlignment="Center"/>
 
 
             </Grid>
@@ -109,7 +100,7 @@
             </Grid.RowDefinitions>
             <Button x:Name="ButtonGoBack" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Margin="0,5,0,0" Background="Transparent" BorderBrush="Transparent" Click="Cancel"/>
             <Grid>
-                <Image Source="/Images/BrownButton.png" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,5,0,0"/>
+                <Image Source="/Images/BrownButton.png" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,5,0,0" IsHitTestVisible="False"/>
                 <TextBlock Text="{x:Static p:Resources.GloblalButtonCancel}" HorizontalAlignment="Center" VerticalAlignment="Center"  Foreground="Black" Height="20" FontFamily="Press Start 2P Normal" FontSize="9" Grid.Row="3" Grid.Column="1"/>
             </Grid>
 

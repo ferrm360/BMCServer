@@ -12,5 +12,8 @@ namespace Service.Contracts
 
         [OperationContract]
         OperationResult<PlayerDTO> Login(string username, string password);
+
+        [OperationContract]
+        bool UpdatePassword(string username, string currentPassword, string newPassword);
     }
 }

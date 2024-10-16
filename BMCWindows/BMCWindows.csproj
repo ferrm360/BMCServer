@@ -69,6 +69,21 @@
     </Compile>
     <Compile Include="Interfaces\IPage.cs" />
     <Compile Include="Patterns\Singleton\UserSessionManager.cs" />
+    <Compile Include="Properties\ServerResources.en-US.Designer.cs">
+      <DependentUpon>ServerResources.en-US.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\ServerResources.es-MX.Designer.cs">
+      <DependentUpon>ServerResources.es-MX.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\ServerResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ServerResources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Validators\FieldValidator.cs" />
     <Page Include="HomePage.xaml">
       <SubType>Designer</SubType>
@@ -150,6 +165,18 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\ServerResources.en-US.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ServerResources.en-US.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\ServerResources.es-MX.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ServerResources.es-MX.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\ServerResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ServerResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <Resource Include="Fonts\PressStart2P-Regular.ttf" />
     <None Include="Connected Services\ChatServer\ChatService.wsdl" />

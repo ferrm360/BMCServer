@@ -14,9 +14,6 @@ namespace Service.Implements
     public class AccountService : IAccountService
     {
         private readonly IPlayerRepository _playerRepository;
-        MessageDTO messageDTO;
-
-
 
         public AccountService()
         {

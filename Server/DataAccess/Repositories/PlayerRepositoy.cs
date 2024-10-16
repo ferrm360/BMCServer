@@ -11,7 +11,6 @@ namespace DataAccess.Repostitories
     {
         private readonly BMCEntities _context;
 
-        // Constructor que recibe el contexto
         public PlayerRepository(BMCEntities context)
         {
             _context = context;
@@ -31,7 +30,7 @@ namespace DataAccess.Repostitories
         public void Add(Player player)
         {
             _context.Player.Add(player);
-            _context.SaveChanges(); // Guardar los cambios en la base de datos
+            _context.SaveChanges();
         }
     }
 }

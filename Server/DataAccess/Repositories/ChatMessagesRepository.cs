@@ -31,9 +31,9 @@ namespace DataAccess.Repositories
                     .OrderBy(cm => cm.Timestamp)
                     .ToList();
             }
-            catch (SqlException ex)
+            catch (SqlException)
             {
-                throw new DataAccessException("SQL error occurred while retrieving messages between players.", ex);
+                throw;
             }
             catch (Exception ex)
             {
@@ -61,9 +61,9 @@ namespace DataAccess.Repositories
                     .Take(limit)
                     .ToList();
             }
-            catch (SqlException ex)
+            catch (SqlException)
             {
-                throw new DataAccessException("SQL error occurred while retrieving recent messages.", ex);
+                throw;
             }
             catch (Exception ex)
             {

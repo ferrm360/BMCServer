@@ -35,9 +35,9 @@ namespace DataAccess.Repositories
                 _context.LobbyPlayers.Add(lobbyPlayer);
                 _context.SaveChanges();
             }
-            catch (SqlException ex)
+            catch (SqlException)
             {
-                throw new DataAccessException("SQL error occurred while adding the player to the lobby.", ex);
+                throw;
             }
             catch (Exception ex)
             {
@@ -57,9 +57,9 @@ namespace DataAccess.Repositories
                     _context.LobbyPlayers.Remove(lobbyPlayer);
                     _context.SaveChanges();
                 }
-                catch (SqlException ex)
+                catch (SqlException)
                 {
-                    throw new DataAccessException("SQL error occurred while removing the player from the lobby.", ex);
+                    throw;
                 }
                 catch (Exception ex)
                 {
@@ -77,9 +77,9 @@ namespace DataAccess.Repositories
                     .Include(lp => lp.Player)
                     .ToList();
             }
-            catch (SqlException ex)
+            catch (SqlException)
             {
-                throw new DataAccessException("SQL error occurred while fetching players in the lobby.", ex);
+                throw;
             }
             catch (Exception ex)
             {
@@ -94,9 +94,9 @@ namespace DataAccess.Repositories
                 return _context.LobbyPlayers
                     .Any(lp => lp.LobbyID == lobbyId && lp.PlayerID == playerId);
             }
-            catch (SqlException ex)
+            catch (SqlException)
             {
-                throw new DataAccessException("SQL error occurred while checking if player is in the lobby.", ex);
+                throw;
             }
             catch (Exception ex)
             {
@@ -111,9 +111,9 @@ namespace DataAccess.Repositories
                 return _context.LobbyPlayers
                     .Count(lp => lp.LobbyID == lobbyId) >= 2;
             }
-            catch (SqlException ex)
+            catch (SqlException)
             {
-                throw new DataAccessException("SQL error occurred while checking if the lobby is full.", ex);
+                throw;
             }
             catch (Exception ex)
             {
@@ -127,9 +127,9 @@ namespace DataAccess.Repositories
             {
                 return _context.LobbyPlayers.Count(lp => lp.LobbyID == lobbyId);
             }
-            catch (SqlException ex)
+            catch (SqlException)
             {
-                throw new DataAccessException("SQL error occurred while getting the number of players in the lobby.", ex);
+                throw;
             }
             catch (Exception ex)
             {
@@ -149,9 +149,9 @@ namespace DataAccess.Repositories
                     lobbyPlayer.PlayerStatus = status;
                     _context.SaveChanges();
                 }
-                catch (SqlException ex)
+                catch (SqlException)
                 {
-                    throw new DataAccessException("SQL error occurred while updating player status.", ex);
+                    throw;
                 }
                 catch (Exception ex)
                 {

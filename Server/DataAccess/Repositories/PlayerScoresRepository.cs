@@ -27,9 +27,9 @@ namespace DataAccess.Repositories
             {
                 return _context.UserScores.FirstOrDefault(us => us.PlayerID == playerId);
             }
-            catch (SqlException ex)
+            catch (SqlException)
             {
-                throw new DataAccessException("SQL error occurred while retrieving scores by player ID.", ex);
+                throw;
             }
             catch (Exception ex)
             {
@@ -48,9 +48,9 @@ namespace DataAccess.Repositories
             {
                 return _context.UserScores.OrderByDescending(us => us.Wins).Take(top).ToList();
             }
-            catch (SqlException ex)
+            catch (SqlException)
             {
-                throw new DataAccessException("SQL error occurred while retrieving top scores.", ex);
+                throw;
             }
             catch (Exception ex)
             {
@@ -82,9 +82,9 @@ namespace DataAccess.Repositories
             {
                 throw new DataAccessException("Error occurred while updating the database during win increment.", ex);
             }
-            catch (SqlException ex)
+            catch (SqlException)
             {
-                throw new DataAccessException("SQL error occurred while incrementing wins.", ex);
+                throw;
             }
             catch (Exception ex)
             {
@@ -116,9 +116,9 @@ namespace DataAccess.Repositories
             {
                 throw new DataAccessException("Error occurred while updating the database during loss increment.", ex);
             }
-            catch (SqlException ex)
+            catch (SqlException)
             {
-                throw new DataAccessException("SQL error occurred while incrementing losses.", ex);
+                throw;
             }
             catch (Exception ex)
             {

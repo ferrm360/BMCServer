@@ -35,9 +35,9 @@ namespace DataAccess.Repositories
             {
                 throw new DataAccessException("Error occurred while updating the database during request acceptance.", ex);
             }
-            catch (SqlException ex)
+            catch (SqlException)
             {
-                throw new DataAccessException("SQL error while accepting the friend request.", ex);
+                throw;
             }
             catch (Exception ex)
             {
@@ -61,9 +61,9 @@ namespace DataAccess.Repositories
 
                 return acceptedRequests;
             }
-            catch (SqlException ex)
+            catch (SqlException)
             {
-                throw new DataAccessException("SQL error occurred while retrieving accepted friends.", ex);
+                throw;
             }
             catch (InvalidOperationException ex)
             {
@@ -81,9 +81,9 @@ namespace DataAccess.Repositories
             {
                 return _context.FriendRequest.Where(r => r.ReceiverPlayerID == receiverPlayerId).ToList();
             }
-            catch (SqlException ex)
+            catch (SqlException)
             {
-                throw new DataAccessException("SQL error while retrieving received friend requests.", ex);
+                throw;
             }
             catch (Exception ex)
             {
@@ -97,9 +97,9 @@ namespace DataAccess.Repositories
             {
                 return _context.FriendRequest.Where(r => r.SenderPlayerID == senderPlayerId).ToList();
             }
-            catch (SqlException ex)
+            catch (SqlException)
             {
-                throw new DataAccessException("SQL error while retrieving sent friend requests.", ex);
+                throw;
             }
             catch (Exception ex)
             {
@@ -116,9 +116,9 @@ namespace DataAccess.Repositories
                     r.ReceiverPlayerID == receiverPlayerId &&
                     r.RequestStatus == "Pending");
             }
-            catch (SqlException ex)
+            catch (SqlException)
             {
-                throw new DataAccessException("SQL error while checking for pending friend request.", ex);
+                throw;
             }
             catch (Exception ex)
             {
@@ -144,9 +144,9 @@ namespace DataAccess.Repositories
             {
                 throw new DataAccessException("Error occurred while updating the database during request rejection.", ex);
             }
-            catch (SqlException ex)
+            catch (SqlException)
             {
-                throw new DataAccessException("SQL error while rejecting the friend request.", ex);
+                throw;
             }
             catch (Exception ex)
             {
@@ -176,9 +176,9 @@ namespace DataAccess.Repositories
             {
                 throw new DataAccessException("Error occurred while updating the database during friend removal.", ex);
             }
-            catch (SqlException ex)
+            catch (SqlException)
             {
-                throw new DataAccessException("SQL error while removing the friend.", ex);
+                throw;
             }
             catch (Exception ex)
             {
@@ -204,9 +204,9 @@ namespace DataAccess.Repositories
             {
                 throw new DataAccessException("Error occurred while updating the database during friend request creation.", ex);
             }
-            catch (SqlException ex)
+            catch (SqlException)
             {
-                throw new DataAccessException("SQL error while creating the friend request.", ex);
+                throw;
             }
             catch (Exception ex)
             {

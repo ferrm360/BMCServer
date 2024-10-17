@@ -1,12 +1,11 @@
-﻿using DataAccess.Repositories;
-using DataAccess.Utilities;
+﻿using DataAccess.Utilities;
 using System;
 using System.Data.Entity.Infrastructure;
 using System.Data.Entity.Validation;
 using System.Data.SqlClient;
 using System.Linq;
 
-namespace DataAccess.Repostitories
+namespace DataAccess.Repositories
 {
     public class PlayerRepository : IPlayerRepository
     {
@@ -29,9 +28,9 @@ namespace DataAccess.Repostitories
             {
                 return _context.Player.SingleOrDefault(p => p.Username == username);
             }
-            catch (SqlException ex)
+            catch (SqlException)
             {
-                throw new DataAccessException("An error occurred while retrieving the player by username from the database.", ex);
+                throw;
             }
             catch (InvalidOperationException ex)
             {
@@ -50,9 +49,9 @@ namespace DataAccess.Repostitories
             {
                 return _context.Player.SingleOrDefault(p => p.Email == email);
             }
-            catch (SqlException ex)
+            catch (SqlException)
             {
-                throw new DataAccessException("An error occurred while retrieving the player by email from the database.", ex);
+                throw;
             }
             catch (InvalidOperationException ex)
             {
@@ -80,9 +79,9 @@ namespace DataAccess.Repostitories
             {
                 throw new DataAccessException("Entity validation failed while adding the player.", ex);
             }
-            catch (SqlException ex)
+            catch (SqlException)
             {
-                throw new DataAccessException("An SQL error occurred while adding the player.", ex);
+                throw;
             }
             catch (InvalidOperationException ex)
             {

@@ -1,22 +1,17 @@
 ﻿using log4net;
 using log4net.Config;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Service.Utilities
 {
-    public static class Log
+    public static class Logger
     {
-        private static readonly ILog logger = LogManager.GetLogger(typeof(Log));
+        private static readonly ILog logger = LogManager.GetLogger(typeof(Logger));
 
-        static Log()
+        static Logger()
         {
-            var logRepository = LogManager.GetRepository(System.Reflection.Assembly.GetEntryAssembly());
-            XmlConfigurator.Configure(logRepository, new FileInfo("App.config"));
+            XmlConfigurator.Configure();
         }
 
         public static void Info(string message)
@@ -39,7 +34,14 @@ namespace Service.Utilities
         {
             if (logger.IsErrorEnabled)
             {
-                logger.Error(message, ex);
+                if (ex != null)
+                {
+                    logger.Error($"{message} - Exception: {ex.Message}", ex);
+                }
+                else
+                {
+                    logger.Error(message);
+                }
             }
         }
 
@@ -48,6 +50,21 @@ namespace Service.Utilities
             if (logger.IsDebugEnabled)
             {
                 logger.Debug(message);
+            }
+        }
+
+        public static void Fatal(string message, Exception ex = null)
+        {
+            if (logger.IsFatalEnabled)
+            {
+                if (ex != null)
+                {
+                    logger.Fatal($"{message} - Exception: {ex.Message}", ex);
+                }
+                else
+                {
+                    logger.Fatal(message);
+                }
             }
         }
     }

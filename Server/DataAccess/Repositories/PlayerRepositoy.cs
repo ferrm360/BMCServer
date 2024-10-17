@@ -1,10 +1,10 @@
 ﻿using DataAccess.Repositories;
+using DataAccess.Utilities;
 using System;
-using System.Collections.Generic;
+using System.Data.Entity.Infrastructure;
+using System.Data.Entity.Validation;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataAccess.Repostitories
 {
@@ -20,19 +20,74 @@ namespace DataAccess.Repostitories
 
         public Player GetByUsername(string username)
         {
+            if (string.IsNullOrEmpty(username))
+            {
+                throw new ArgumentNullException(nameof(username), "Username cannot be null or empty.");
+            }
 
-            return _context.Player.SingleOrDefault(p => p.Username == username);
+            try
+            {
+                return _context.Player.SingleOrDefault(p => p.Username == username);
+            }
+            catch (SqlException ex)
+            {
+                throw new DataAccessException("An error occurred while retrieving the player by username from the database.", ex);
+            }
+            catch (InvalidOperationException ex)
+            {
+                throw new DataAccessException("An invalid operation occurred while retrieving the player by username.", ex);
+            }
         }
 
         public Player GetByEmail(string email)
         {
-            return _context.Player.SingleOrDefault(p => p.Email == email);
+            if (string.IsNullOrEmpty(email))
+            {
+                throw new ArgumentNullException(nameof(email), "Email cannot be null or empty.");
+            }
+
+            try
+            {
+                return _context.Player.SingleOrDefault(p => p.Email == email);
+            }
+            catch (SqlException ex)
+            {
+                throw new DataAccessException("An error occurred while retrieving the player by email from the database.", ex);
+            }
+            catch (InvalidOperationException ex)
+            {
+                throw new DataAccessException("An invalid operation occurred while retrieving the player by email.", ex);
+            }
         }
 
         public void Add(Player player)
         {
-            _context.Player.Add(player);
-            _context.SaveChanges();
+            if (player == null)
+            {
+                throw new ArgumentNullException(nameof(player), "Player entity cannot be null.");
+            }
+
+            try
+            {
+                _context.Player.Add(player);
+                _context.SaveChanges();
+            }
+            catch (DbUpdateException ex)
+            {
+                throw new DataAccessException("An error occurred while updating the database during the player addition.", ex);
+            }
+            catch (DbEntityValidationException ex)
+            {
+                throw new DataAccessException("Entity validation failed while adding the player.", ex);
+            }
+            catch (SqlException ex)
+            {
+                throw new DataAccessException("An SQL error occurred while adding the player.", ex);
+            }
+            catch (InvalidOperationException ex)
+            {
+                throw new DataAccessException("An invalid operation occurred while adding the player.", ex);
+            }
         }
     }
 }

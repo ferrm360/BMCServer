@@ -1,6 +1,7 @@
 ﻿using DataAccess.Repositories;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +20,7 @@ namespace DataAccess.Repostitories
 
         public Player GetByUsername(string username)
         {
+
             return _context.Player.SingleOrDefault(p => p.Username == username);
         }
 

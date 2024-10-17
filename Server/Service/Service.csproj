@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net, Version=3.0.1.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.3.0.1\lib\net462\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -59,6 +62,7 @@
     <Compile Include="Results\ResultGeneric.cs" />
     <Compile Include="Utilities\Helpers\PasswordHelper.cs" />
     <Compile Include="Utilities\Helpers\SqlErrorHandler.cs" />
+    <Compile Include="Utilities\Log.cs" />
     <Compile Include="Utilities\Mapper\PlayerMapper.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -69,6 +73,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Utilities\Email\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

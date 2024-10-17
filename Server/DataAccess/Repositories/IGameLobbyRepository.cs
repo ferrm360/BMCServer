@@ -1,12 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace DataAccess.Repositories
 {
-    internal interface IGameLobby
+    public interface IGameLobbyRepository
     {
+        void CreateLobby(GameLobby lobby);
+        GameLobby GetByLobbyName(string lobbyName);
+        GameLobby GetById(int lobbyId);
+        bool IsLobbyPrivate(int lobbyId);
+        bool VerifyLobbyPassword(int lobbyId, string password);
+        void DeleteLobby(int lobbyId);
+        void UpdateLobby(GameLobby lobby);
+        IEnumerable<GameLobby> GetAllLobbies();
+        IEnumerable<GameLobby> GetPublicLobbies();
     }
 }

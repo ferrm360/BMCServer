@@ -15,5 +15,6 @@ namespace DataAccess.Repositories
         void AcceptRequest(int requestId);
         void RejectRequest(int requestId);
         void RemoveFriend(int userId, int friendId);
+        IEnumerable<Player> GetAcceptedFriends(int playerId);
     }
 }

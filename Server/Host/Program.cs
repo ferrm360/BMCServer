@@ -16,7 +16,7 @@ namespace Host
         {
             XmlConfigurator.Configure();
 
-            logger.Fatal("Initializing the service host.");
+            logger.Info("Initializing the service host.");
             Console.WriteLine("Initializing services, press Enter to continue...");
             Console.ReadLine();
 
@@ -66,5 +66,4 @@ namespace Host
             }
         }
     }
-
 }

@@ -60,19 +60,21 @@
     <Compile Include="Implements\UserConnectionManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Results\ResultGeneric.cs" />
+    <Compile Include="Utilities\Email\EmailConfigHelper.cs" />
+    <Compile Include="Utilities\Email\EmailService.cs" />
+    <Compile Include="Utilities\Email\EmailServiceFactory.cs" />
+    <Compile Include="Utilities\Email\IEmailService.cs" />
     <Compile Include="Utilities\Helpers\PasswordHelper.cs" />
     <Compile Include="Utilities\Helpers\SqlErrorHandler.cs" />
     <Compile Include="Utilities\Logger.cs" />
     <Compile Include="Utilities\Mapper\PlayerMapper.cs" />
+    <Compile Include="Utilities\NotificationService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataAccess\DataAccess.csproj">
-      <Project>{D36BD91C-0A4F-43CC-B01C-0665410F30F7}</Project>
+      <Project>{d36bd91c-0a4f-43cc-b01c-0665410f30f7}</Project>
       <Name>DataAccess</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Utilities\Email\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

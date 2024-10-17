@@ -7,6 +7,7 @@ using System.Linq;
 
 namespace DataAccess.Repositories
 {
+    // TODO recordar que cuando se crea un player en player profile se pone la fecha en la que se unio.
     public class PlayerRepository : IPlayerRepository
     {
         private readonly BMCEntities _context;

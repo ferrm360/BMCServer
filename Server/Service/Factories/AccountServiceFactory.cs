@@ -1,4 +1,4 @@
-﻿using DataAccess.Repostitories;
+﻿using DataAccess.Repositories;
 using DataAccess;
 using Service.Implements;
 using System;

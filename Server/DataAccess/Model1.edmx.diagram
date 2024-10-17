@@ -14,7 +14,7 @@
         <EntityTypeShape EntityType="BMCModel.Player" Width="1.5" PointX="0.75" PointY="9" IsExpanded="true" />
         <EntityTypeShape EntityType="BMCModel.Profile" Width="1.5" PointX="6" PointY="5.125" IsExpanded="true" />
         <EntityTypeShape EntityType="BMCModel.StatusPlayer" Width="1.5" PointX="3.75" PointY="0.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="BMCModel.UserScores" Width="1.5" PointX="3" PointY="19.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BMCModel.PlayerScores" Width="1.5" PointX="3" PointY="19.875" IsExpanded="true" />
         <AssociationConnector Association="BMCModel.FK__ChatMessa__Recei__5165187F" ManuallyRouted="false" />
         <AssociationConnector Association="BMCModel.FK__ChatMessa__Sende__52593CB8" ManuallyRouted="false" />
         <AssociationConnector Association="BMCModel.FK__FriendReq__Recei__534D60F1" ManuallyRouted="false" />

@@ -90,6 +90,9 @@
     <Compile Include="Player.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="PlayerScores.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Profile.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -102,14 +105,12 @@
     <Compile Include="Repositories\IGameLobbyRepository.cs" />
     <Compile Include="Repositories\ILobbyPlayersRepository.cs" />
     <Compile Include="Repositories\IPlayerScoresRepository.cs" />
+    <Compile Include="Repositories\IProfileRepository.cs" />
     <Compile Include="Repositories\LobbyPlayersRepository.cs" />
     <Compile Include="Repositories\PlayerRepositoy.cs" />
     <Compile Include="Repositories\IPlayerRepository.cs" />
     <Compile Include="Repositories\PlayerScoresRepository.cs" />
     <Compile Include="StatusPlayer.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="UserScores.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Utilities\DataAccessException.cs" />

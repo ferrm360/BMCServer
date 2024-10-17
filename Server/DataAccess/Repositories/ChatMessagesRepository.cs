@@ -100,9 +100,9 @@ namespace DataAccess.Repositories
             {
                 throw new DataAccessException("Error occurred while adding the chat message.", ex);
             }
-            catch (SqlException ex)
+            catch (SqlException)
             {
-                throw new DataAccessException("SQL error occurred while adding the chat message.", ex);
+                throw;
             }
             catch (Exception ex)
             {

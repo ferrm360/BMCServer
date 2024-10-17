@@ -444,7 +444,7 @@
           <NavigationProperty Name="GuestPlayers" Relationship="Self.FK__GuestPlay__Statu__5629CD9C" FromRole="StatusPlayer" ToRole="GuestPlayers" />
           <NavigationProperty Name="Profile" Relationship="Self.FK__Profile__StatusI__5BE2A6F2" FromRole="StatusPlayer" ToRole="Profile" />
         </EntityType>
-        <EntityType Name="UserScores">
+        <EntityType Name="PlayerScores">
           <Key>
             <PropertyRef Name="ScoreID" />
           </Key>
@@ -590,7 +590,7 @@
         </Association>
         <Association Name="FK__UserScore__Playe__5CD6CB2B">
           <End Role="Player" Type="Self.Player" Multiplicity="1" />
-          <End Role="UserScores" Type="Self.UserScores" Multiplicity="*" />
+          <End Role="UserScores" Type="BMCModel.PlayerScores" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Player">
               <PropertyRef Name="PlayerID" />
@@ -622,7 +622,7 @@
           <EntitySet Name="Player" EntityType="Self.Player" />
           <EntitySet Name="Profile" EntityType="Self.Profile" />
           <EntitySet Name="StatusPlayer" EntityType="Self.StatusPlayer" />
-          <EntitySet Name="UserScores" EntityType="Self.UserScores" />
+          <EntitySet Name="UserScores" EntityType="BMCModel.PlayerScores" />
           <AssociationSet Name="FK__ChatMessa__Recei__5165187F" Association="Self.FK__ChatMessa__Recei__5165187F">
             <End Role="Player" EntitySet="Player" />
             <End Role="ChatMessages" EntitySet="ChatMessages" />
@@ -779,7 +779,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="UserScores">
-            <EntityTypeMapping TypeName="BMCModel.UserScores">
+            <EntityTypeMapping TypeName="BMCModel.PlayerScores">
               <MappingFragment StoreEntitySet="UserScores">
                 <ScalarProperty Name="ScoreID" ColumnName="ScoreID" />
                 <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />

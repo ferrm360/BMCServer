@@ -8,9 +8,11 @@ namespace DataAccess.Repositories
 {
     public interface IPlayerScoresRepository
     {
-        IEnumerable<UserScores> GetTopScores(int top);
-        UserScores GetScoresByPlayerId(int playerId);
+        IEnumerable<PlayerScores> GetTopScores(int top);
+        PlayerScores GetScoresByPlayerId(int playerId);
         void IncrementWins(int playerId);
         void IncrementLosses(int playerId);
+        void AddPlayerScores(PlayerScores playerScores);
+
     }
 }

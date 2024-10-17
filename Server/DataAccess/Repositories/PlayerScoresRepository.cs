@@ -16,7 +16,7 @@ namespace DataAccess.Repositories
             _context = context;
         }
 
-        public UserScores GetScoresByPlayerId(int playerId)
+        public PlayerScores GetScoresByPlayerId(int playerId)
         {
             if (playerId <= 0)
             {
@@ -27,9 +27,9 @@ namespace DataAccess.Repositories
             {
                 return _context.UserScores.FirstOrDefault(us => us.PlayerID == playerId);
             }
-            catch (SqlException)
+            catch (SqlException ex)
             {
-                throw;
+                throw new DataAccessException("SQL error occurred while retrieving scores by player ID.", ex);
             }
             catch (Exception ex)
             {
@@ -37,7 +37,7 @@ namespace DataAccess.Repositories
             }
         }
 
-        public IEnumerable<UserScores> GetTopScores(int top)
+        public IEnumerable<PlayerScores> GetTopScores(int top)
         {
             if (top <= 0)
             {
@@ -48,9 +48,9 @@ namespace DataAccess.Repositories
             {
                 return _context.UserScores.OrderByDescending(us => us.Wins).Take(top).ToList();
             }
-            catch (SqlException)
+            catch (SqlException ex)
             {
-                throw;
+                throw new DataAccessException("SQL error occurred while retrieving top scores.", ex);
             }
             catch (Exception ex)
             {
@@ -60,20 +60,14 @@ namespace DataAccess.Repositories
 
         public void IncrementWins(int playerId)
         {
-            if (playerId <= 0)
+            var scores = GetScoresByPlayerId(playerId);
+            if (scores == null)
             {
-                throw new ArgumentException("Player ID must be greater than zero.", nameof(playerId));
+                throw new InvalidOperationException($"No scores found for player with ID {playerId}.");
             }
 
             try
             {
-                EnsureScoreExists(playerId);
-                var scores = GetScoresByPlayerId(playerId);
-                if (scores == null)
-                {
-                    throw new InvalidOperationException($"No scores found for player with ID {playerId}.");
-                }
-
                 scores.Wins++;
                 Update(scores);
                 Save();
@@ -82,9 +76,9 @@ namespace DataAccess.Repositories
             {
                 throw new DataAccessException("Error occurred while updating the database during win increment.", ex);
             }
-            catch (SqlException)
+            catch (SqlException ex)
             {
-                throw;
+                throw new DataAccessException("SQL error occurred while incrementing wins.", ex);
             }
             catch (Exception ex)
             {
@@ -94,20 +88,14 @@ namespace DataAccess.Repositories
 
         public void IncrementLosses(int playerId)
         {
-            if (playerId <= 0)
+            var scores = GetScoresByPlayerId(playerId);
+            if (scores == null)
             {
-                throw new ArgumentException("Player ID must be greater than zero.", nameof(playerId));
+                throw new InvalidOperationException($"No scores found for player with ID {playerId}.");
             }
 
             try
             {
-                EnsureScoreExists(playerId);
-                var scores = GetScoresByPlayerId(playerId);
-                if (scores == null)
-                {
-                    throw new InvalidOperationException($"No scores found for player with ID {playerId}.");
-                }
-
                 scores.Losses++;
                 Update(scores);
                 Save();
@@ -116,9 +104,9 @@ namespace DataAccess.Repositories
             {
                 throw new DataAccessException("Error occurred while updating the database during loss increment.", ex);
             }
-            catch (SqlException)
+            catch (SqlException ex)
             {
-                throw;
+                throw new DataAccessException("SQL error occurred while incrementing losses.", ex);
             }
             catch (Exception ex)
             {
@@ -126,29 +114,33 @@ namespace DataAccess.Repositories
             }
         }
 
-        private void EnsureScoreExists(int playerId)
+        public void AddPlayerScores(PlayerScores playerScores)
         {
-            var existingScore = GetScoresByPlayerId(playerId);
-            if (existingScore == null)
+            if (playerScores == null)
             {
-                AddScore(playerId);
+                throw new ArgumentNullException(nameof(playerScores), "PlayerScores entity cannot be null.");
+            }
+
+            try
+            {
+                _context.UserScores.Add(playerScores);
+                Save();
+            }
+            catch (DbUpdateException ex)
+            {
+                throw new DataAccessException("Error occurred while adding player scores to the database.", ex);
+            }
+            catch (SqlException ex)
+            {
+                throw new DataAccessException("SQL error occurred while adding player scores.", ex);
+            }
+            catch (Exception ex)
+            {
+                throw new DataAccessException("An unexpected error occurred while adding player scores.", ex);
             }
         }
 
-        private void AddScore(int playerId)
-        {
-            var newScores = new UserScores
-            {
-                PlayerID = playerId,
-                Wins = 0,
-                Losses = 0
-            };
-
-            _context.UserScores.Add(newScores);
-            Save();
-        }
-
-        private void Update(UserScores scores)
+        private void Update(PlayerScores scores)
         {
             _context.Entry(scores).State = System.Data.Entity.EntityState.Modified;
         }

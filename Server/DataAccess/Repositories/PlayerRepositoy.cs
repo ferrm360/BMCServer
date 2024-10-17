@@ -1,6 +1,7 @@
 ﻿using DataAccess.Repositories;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,6 +33,19 @@ namespace DataAccess.Repostitories
         {
             _context.Player.Add(player);
             _context.SaveChanges(); // Guardar los cambios en la base de datos
+        }
+
+        public void UpdatePasswordHash(string username, string passwordHash)
+        {
+            
+         var player = GetByUsername(username);
+         if (player != null)
+         {
+            player.PasswordHash = passwordHash;
+            _context.Entry(player).State = EntityState.Modified;
+            _context.SaveChanges();
+         }
+            
         }
     }
 }

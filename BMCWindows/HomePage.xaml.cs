@@ -89,6 +89,11 @@ namespace BMCWindows
             });
 
         }
+
+        private void EditProfilePage(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new ProfileWindow());
+        }
     }
 
     public class Friend

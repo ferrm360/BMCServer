@@ -24,17 +24,28 @@ namespace Host
 
                     Console.WriteLine("Pre using");
                     Console.ReadLine();
+
                     using (ServiceHost chatServiceHost = new ServiceHost(typeof(ChatService)))
                     {
+                        chatServiceHost.Open();
                         Console.WriteLine("PreOpen");
                         Console.ReadLine();
-                        chatServiceHost.Open();
+                     
                         Console.WriteLine("ChatService is running...");
-
-                        Console.WriteLine("Services are up and running.");
-                        Console.WriteLine("Press Enter to terminate the services.");
                         Console.ReadLine();
+
+                        using (ServiceHost profileServiceHost = new ServiceHost(typeof(ProfileService)))
+                        {
+                            profileServiceHost.Open();
+                            Console.WriteLine("ProfileService is running...");
+                            Console.WriteLine("Services are up and running.");
+                            Console.WriteLine("Press Enter to terminate the services.");
+                            Console.ReadLine();
+
+                        }
                     }
+
+                   
                 }
             }
             catch (Exception ex)

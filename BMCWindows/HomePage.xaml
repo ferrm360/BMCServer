@@ -11,7 +11,11 @@
       Background="#FEFFDB"
       >
     <Grid>
-        <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="681*"/>
+            <ColumnDefinition Width="119*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.ColumnSpan="2">
             <Grid.RowDefinitions>
                 <RowDefinition Height="129*"/>
                 <RowDefinition Height="44*"/>
@@ -26,7 +30,7 @@
             <Ellipse  Stroke="Black" Grid.Column="0" Grid.Row="0"/>
 
         </Grid>
-        <Grid>
+        <Grid Grid.ColumnSpan="2">
             <Grid.RowDefinitions>
                 <RowDefinition Height="133*"/>
                 <RowDefinition Height="37*"/>
@@ -43,11 +47,8 @@
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Border Background="#DDD" Margin="2" CornerRadius="5">
-                            <!-- Fondo rectangular con esquinas redondeadas -->
                             <StackPanel Orientation="Horizontal" Margin="5">
-                                <!-- Friend's Image -->
                                 <Image Source="{Binding ImagePath}" Width="40" Height="40" Margin="5"/>
-                                <!-- Friend's Name -->
                                 <TextBlock Text="{Binding Name}" VerticalAlignment="Center" FontSize="16" Margin="5"/>
                             </StackPanel>
                         </Border>
@@ -56,28 +57,23 @@
             </ListBox>
 
         </Grid>
-        <Expander Header="Amigos" ExpandDirection="Up" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="250">
+        <Expander Header="Amigos" ExpandDirection="Up" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="250" Grid.ColumnSpan="2">
             <Expander.HeaderTemplate>
                 <DataTemplate>
                     <TextBlock Text="Chat" FontSize="16" FontWeight="Bold" HorizontalAlignment="Center"/>
                 </DataTemplate>
             </Expander.HeaderTemplate>
 
-            <!-- Chat content, shown when expanded -->
             <Border Background="LightGray" CornerRadius="8" Padding="10">
                 <StackPanel>
-                    <!-- Search Box -->
                     <TextBox x:Name="textBoxSearchFriendsChats" Margin="5" />
 
-                    <!-- List of Friends -->
                     <ListBox x:Name="Chat" Margin="5" >
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <Border Background="#DDD" CornerRadius="5" Margin="5">
                                     <StackPanel Orientation="Horizontal" Margin="5">
-                                        <!-- Friend's Image -->
                                         <Image Source="{Binding ImagePath}" Width="40" Height="40" Margin="5"/>
-                                        <!-- Friend's Name -->
                                         <TextBlock Text="{Binding Name}" VerticalAlignment="Center" FontSize="16" Margin="5"/>
                                     </StackPanel>
                                 </Border>
@@ -88,7 +84,7 @@
             </Border>
         </Expander>
 
-        <Grid x:Name="ChatGrid" Visibility="Collapsed" Margin="10,0,0,0">
+        <Grid x:Name="ChatGrid" Visibility="Collapsed" Margin="10,0,0,0" Grid.ColumnSpan="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="268*"/>
                 <ColumnDefinition Width="127*"/>
@@ -99,7 +95,6 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
-            <!-- List of Messages -->
             <ListBox x:Name="MessagesList" Grid.Row="1" Margin="10,10,10,10" Grid.RowSpan="2" Grid.ColumnSpan="2" Grid.Column="1">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
@@ -112,7 +107,6 @@
                 </ListBox.ItemTemplate>
             </ListBox>
 
-            <!-- Message Input -->
             <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="10,10,10,10" Grid.ColumnSpan="2" HorizontalAlignment="Right">
                 <TextBox x:Name="MessageTextBox" Width="200" Margin="0,0,5,0"/>
                 <Button Content="Enviar" />
@@ -121,7 +115,7 @@
 
         </Grid>
 
-        <Grid>
+        <Grid Grid.ColumnSpan="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="533*"/>
                 <ColumnDefinition Width="267*"/>
@@ -132,23 +126,43 @@
                 <RowDefinition Height="Auto" MinHeight="39.96"/>
             </Grid.RowDefinitions>
 
-            <!-- Lista de mensajes -->
             <ListBox x:Name="generalMessages" Grid.Row="1" Margin="10,2,10,10">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Vertical">
-                            <TextBlock Text="{Binding Sender}" FontWeight="Bold"/>
+                            <!--<TextBlock Text="{Binding Sender}" FontWeight="Bold"/>-->
                             <TextBlock Text="{Binding Messages}" TextWrapping="Wrap"/>
                         </StackPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
 
-            <!-- Entrada de mensaje -->
             <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="10,10,10,10">
                 <TextBox x:Name="textboxGeneralChat" Width="200" Margin="0,0,5,0"/>
                 <Button Content="Enviar" Click="SendGeneralMessage_Click"/>
             </StackPanel>
+
+        </Grid>
+        <Grid Grid.ColumnSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="13*"/>
+                <RowDefinition Height="35*"/>
+
+                <RowDefinition Height="149*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="190*"/>
+                <ColumnDefinition Width="216*"/>
+                <ColumnDefinition Width="135*"/>
+                <ColumnDefinition Width="135*"/>
+                <ColumnDefinition Width="135*"/>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="labelUserName" Content="User" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="50" FontFamily="Press Start 2P Regular"/>
+            <Button x:Name="buttonEditProfile" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Margin="0,5,0,0" Background="Transparent" BorderBrush="Transparent" Grid.Column="2" Grid.Row="1" Click="EditProfilePage"/>
+            <Image Source="Images/BrownButton.png" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Column="2" Grid.Row="1" IsHitTestVisible="False"/>
+            <TextBlock Text="Editar perfil" HorizontalAlignment="Center" VerticalAlignment="Center"  Foreground="Black" Height="8" FontFamily="Press Start 2P Normal" FontSize="7" Grid.Row="1" Grid.Column="2" IsHitTestVisible="False"/>
+
+
 
         </Grid>
 

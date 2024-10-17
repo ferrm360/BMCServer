@@ -22,6 +22,8 @@ namespace BMCWindows
     /// </summary>
     public partial class LogIn : Page
     {
+        private string realPassword = string.Empty;
+
         public LogIn()
         {
             InitializeComponent();
@@ -37,7 +39,7 @@ namespace BMCWindows
         {
             Server.AccountServiceClient proxy = new Server.AccountServiceClient();
             String user = textBoxUser.Text;
-            String password = textBoxPassword.Text;
+            String password = realPassword;
 
             if (!FieldValidator.AreFieldsEmpty(user, password))
             {
@@ -62,6 +64,17 @@ namespace BMCWindows
             }
 
             
+
+        }
+
+        private void HidePassword(object sender, System.Windows.Input.TextCompositionEventArgs e) 
+        {
+            TextBox textBox = sender as TextBox;
+            
+            realPassword += e.Text;
+            textBox.Text = new string( '*', realPassword.Length);
+            textBox.SelectionStart = textBox.Text.Length;
+            e.Handled = true;
 
         }
     }

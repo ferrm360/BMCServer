@@ -6,6 +6,7 @@ using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 using Service.DTO;
+using DataAccess;
 
 namespace Service.Implements
 {
@@ -44,16 +45,24 @@ namespace Service.Implements
         {
             string fullMessage = $"{username}: {message}";
 
-            foreach (var userCallback in _connectedUsers.Values)
+            foreach (var userCallback in _connectedUsers)
             {
-                try
-                {
-                    userCallback.ReceiveMessage(fullMessage);
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"Error sending message to {username}: {ex.Message}");
-                }
+               
+                    try
+                    {
+                    if (userCallback.Key != username)
+                    {
+
+
+                        userCallback.Value.ReceiveMessage(fullMessage);
+                    }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"Error sending message to {username}: {ex.Message}");
+                    }
+                
+               
             }
         }
     }

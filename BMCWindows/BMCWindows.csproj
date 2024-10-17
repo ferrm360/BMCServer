@@ -62,6 +62,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\ProfileServer\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\Server\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -90,6 +95,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="LogInWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProfileWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -186,6 +195,22 @@
     <None Include="Connected Services\ChatServer\ChatService1.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\ProfileServer\BMCWindows.ProfileServer.OperationResultOfPlayerDTOQo1Oyztf.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProfileServer\ProfileService.wsdl" />
+    <None Include="Connected Services\ProfileServer\ProfileService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProfileServer\ProfileService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProfileServer\ProfileService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProfileServer\ProfileService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\Server\AccountService.wsdl" />
     <None Include="Connected Services\Server\AccountService.xsd">
       <SubType>Designer</SubType>
@@ -239,6 +264,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\ChatServer\" />
+    <WCFMetadataStorage Include="Connected Services\ProfileServer\" />
     <WCFMetadataStorage Include="Connected Services\Server\" />
   </ItemGroup>
   <ItemGroup>
@@ -261,6 +287,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\ChatServer\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ProfileServer\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ProfileServer\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ProfileServer\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

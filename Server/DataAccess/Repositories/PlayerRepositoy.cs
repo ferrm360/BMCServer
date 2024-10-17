@@ -89,5 +89,18 @@ namespace DataAccess.Repositories
                 throw new DataAccessException("An invalid operation occurred while adding the player.", ex);
             }
         }
+
+        public void UpdatePasswordHash(string username, string passwordHash)
+        {
+            
+         var player = GetByUsername(username);
+         if (player != null)
+         {
+            player.PasswordHash = passwordHash;
+            _context.Entry(player).State = EntityState.Modified;
+            _context.SaveChanges();
+         }
+            
+        }
     }
 }

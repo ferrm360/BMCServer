@@ -1,4 +1,5 @@
-﻿using BMCWindows.Server;
+﻿using BMCWindows.Patterns.Singleton;
+using BMCWindows.Server;
 using BMCWindows.Validators;
 using System;
 using System.Collections.Generic;
@@ -38,6 +39,7 @@ namespace BMCWindows
             {
                 var result = proxy.Register(player);
                 if (result.Success) {
+                    UserSessionManager.getInstance().loginPlayer(player);
                     this.NavigationService.Navigate(new HomePage());
                 } else
                 {
@@ -54,6 +56,14 @@ namespace BMCWindows
 
             
             
+        }
+
+        private void HidePassword(object sender, System.Windows.Input.TextCompositionEventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+            textBox.Text += "*";
+            e.Handled = true;
+
         }
 
 
